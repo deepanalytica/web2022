@@ -3,301 +3,382 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Deep Living — Vender, cambiarte, construir o invertir sin complicarte</title>
-<meta name="description" content="Te ayudamos a vender, cambiar de vivienda, construir en tu parcela o invertir con un plan claro, información verificada y un solo equipo coordinando el proceso.">
-<meta name="theme-color" content="#F4F0E8">
+<title>Deep Living — Vender, cambiarte, construir o invertir sin coordinarlo todo tú</title>
+<meta name="description" content="Deep Living ordena ventas, cambios de vivienda, construcción en parcela e inversión para que tomes pocas decisiones con información clara y un solo equipo coordinando el proceso.">
+<meta name="theme-color" content="#F4F0E7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F4F0E8;
-  --paper:#FFFDF9;
-  --ink:#1E2924;
-  --muted:#68716C;
-  --olive:#4D5B47;
-  --olive-2:#66745D;
-  --sage:#A9B19F;
-  --copper:#B86F49;
-  --sand:#DFD2BE;
-  --soft:#EAE5DA;
-  --line:#D8D1C6;
-  --ok:#3F6A58;
-  --shadow:0 24px 70px rgba(30,41,36,.11);
-  --serif:Georgia,'Times New Roman',serif;
-  --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif
+  --bg:#F4F0E7;
+  --paper:#FFFDF8;
+  --paper-2:#F8F5EE;
+  --ink:#1D2722;
+  --muted:#69726D;
+  --forest:#405246;
+  --forest-2:#566B5D;
+  --sage:#A8B2A3;
+  --clay:#B66F4E;
+  --sand:#DCCDB7;
+  --line:#D9D2C7;
+  --line-dark:rgba(255,255,255,.16);
+  --ok:#3F6E59;
+  --warn:#9A714B;
+  --shadow:0 24px 70px rgba(29,39,34,.11);
+  --serif:"Newsreader",Georgia,serif;
+  --sans:"Manrope",Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --max:1180px
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.45;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-button{font:inherit}
-.wrap{width:min(1180px,calc(100% - 36px));margin:auto}
-.eyebrow{font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--olive)}
-h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.045em}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:14px 20px;font-weight:850;font-size:14px;border:1px solid var(--ink);transition:.18s ease;cursor:pointer}
+button,input,textarea{font:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid rgba(182,111,78,.45);outline-offset:4px}
+.skip{position:absolute;left:-999px;top:10px;background:#fff;padding:10px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:10px}
+.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--forest)}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.035em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--ink);border-radius:999px;padding:14px 20px;font-size:14px;font-weight:800;transition:transform .18s ease,background .18s ease,color .18s ease;cursor:pointer}
 .btn:hover{transform:translateY(-1px)}
 .btn-primary{background:var(--ink);color:white}
-.btn-light{background:rgba(255,255,255,.6)}
-.link-arrow{font-weight:850;font-size:14px;display:inline-flex;gap:8px;align-items:center}
-.link-arrow span{transition:.18s}
-.link-arrow:hover span{transform:translateX(3px)}
-.nav-shell{position:sticky;top:0;z-index:50;background:rgba(244,240,232,.94);backdrop-filter:blur(15px);border-bottom:1px solid rgba(77,91,71,.11)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.wordmark{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-size:23px;font-weight:700;letter-spacing:-.03em}
-.mark{width:34px;height:28px;position:relative}
-.mark:before,.mark:after{content:'';position:absolute;width:20px;height:20px;border-left:2px solid var(--olive);border-top:2px solid var(--olive);transform:rotate(45deg);top:6px}
+.btn-ghost{background:rgba(255,255,255,.55)}
+.nav-shell{position:sticky;top:0;z-index:60;background:rgba(244,240,231,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(64,82,70,.11)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-size:23px;font-weight:600}
+.mark{width:33px;height:27px;position:relative}
+.mark:before,.mark:after{content:"";position:absolute;width:19px;height:19px;border-left:2px solid var(--forest);border-top:2px solid var(--forest);transform:rotate(45deg);top:6px}
 .mark:before{left:0}.mark:after{left:11px}
-.navlinks{display:flex;align-items:center;gap:25px;font-size:14px;color:#56615B}
-.hero{padding:72px 0 34px}
-.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:58px;align-items:center}
-h1{font-size:clamp(56px,7.15vw,92px);line-height:.93;margin:14px 0 20px;max-width:760px}
-.hero-copy .lead{font-size:21px;color:#52605A;max-width:690px;margin:0 0 28px}
-.hero-copy .lead strong{color:var(--ink)}
+.navlinks{display:flex;gap:24px;align-items:center;color:#53615A;font-size:13px;font-weight:600}
+.hero{padding:68px 0 32px}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:58px;align-items:center}
+.hero h1{font-size:clamp(56px,7vw,92px);line-height:.93;margin:14px 0 20px;max-width:760px}
+.hero .lead{font-size:21px;color:#56635C;max-width:700px;margin:0 0 27px}
+.hero .lead strong{color:var(--ink);font-weight:800}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-.hero-proof{display:flex;gap:24px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
-.hero-proof div{display:flex;align-items:center;gap:8px;font-size:13px;color:#65706A}
-.check{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#DCE6DD;color:var(--ok);font-size:12px;font-weight:900}
+.proof-row{display:flex;gap:22px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.proof-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#647069}
+.check{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#DCE7DE;color:var(--ok);font-weight:900;font-size:11px}
 .hero-media{position:relative;min-height:590px}
-.hero-photo{position:absolute;inset:0 0 0 8%;border-radius:160px 24px 24px 24px;overflow:hidden;box-shadow:var(--shadow);background:#c8c8bf}
+.hero-photo{position:absolute;inset:0 0 0 7%;overflow:hidden;border-radius:164px 24px 24px 24px;box-shadow:var(--shadow);background:#d5d1c9}
 .hero-photo img{width:100%;height:100%;object-fit:cover}
-.hero-panel{position:absolute;left:0;bottom:30px;width:300px;background:rgba(255,253,249,.97);border:1px solid var(--line);border-radius:20px;padding:18px 18px 17px;box-shadow:0 18px 45px rgba(31,38,34,.16)}
-.hero-panel small{font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--copper)}
-.hero-panel strong{display:block;font-family:var(--serif);font-size:23px;line-height:1.05;margin:8px 0 6px}
-.hero-panel p{font-size:13px;color:var(--muted);margin:0}
-.hero-location{position:absolute;right:-6px;top:18px;background:var(--copper);color:white;border-radius:999px;padding:9px 14px;font-weight:850;font-size:11px}
-.quicknav{padding:18px 0 6px}
-.quicknav-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.quick{background:rgba(255,253,249,.68);border:1px solid var(--line);border-radius:14px;padding:13px 15px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:800;font-size:13px;transition:.18s}
-.quick:hover{background:white;transform:translateY(-2px)}
-.quick em{font-style:normal;color:var(--copper)}
-section{padding:82px 0}
-.section-head{max-width:850px;margin-bottom:34px}
-.section-head h2{font-size:clamp(40px,5.3vw,64px);line-height:.98;margin:8px 0 12px}
-.section-head p{font-size:18px;color:var(--muted);margin:0;max-width:760px}
-.problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.problem-card{background:var(--paper);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:190px 1fr;min-height:310px;transition:.2s}
-.problem-card:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(30,41,36,.07)}
-.problem-img{height:100%;min-height:310px;background:#d6d2ca}
-.problem-img img{width:100%;height:100%;object-fit:cover}
-.problem-body{padding:24px 24px 22px;display:flex;flex-direction:column}
-.problem-num{font-size:10px;font-weight:900;letter-spacing:.15em;color:var(--copper)}
-.problem-card h3{font-size:31px;line-height:1.02;margin:15px 0 16px}
-.label{font-size:10px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:var(--olive);margin:0 0 6px}
-.problem-text{color:#626C66;font-size:14px;margin:0 0 15px}
-.solution{background:#F0EEE7;border-radius:14px;padding:13px 14px;margin-top:auto}
-.solution b{font-size:13px;display:block;margin-bottom:4px}
-.solution span{font-size:13px;color:#626C66}
+.hero-card{position:absolute;left:0;bottom:28px;width:310px;background:rgba(255,253,248,.97);border:1px solid var(--line);border-radius:20px;padding:19px;box-shadow:0 18px 45px rgba(29,39,34,.16)}
+.hero-card small{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--clay)}
+.hero-card strong{display:block;font-family:var(--serif);font-size:24px;line-height:1.05;margin:8px 0 6px}
+.hero-card p{margin:0;color:var(--muted);font-size:13px}
+.location{position:absolute;right:-5px;top:18px;background:var(--clay);color:#fff;border-radius:999px;padding:9px 14px;font-size:11px;font-weight:800}
+section{padding:80px 0}
+.section-head{max-width:840px;margin-bottom:34px}
+.section-head h2{font-size:clamp(40px,5.2vw,64px);line-height:.98;margin:8px 0 12px}
+.section-head p{margin:0;color:var(--muted);font-size:18px;max-width:760px}
+.trust-strip{padding:17px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,253,248,.38)}
+.trust-strip-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-mini{padding:10px 18px;border-right:1px solid var(--line)}
+.trust-mini:first-child{padding-left:0}.trust-mini:last-child{border-right:0}
+.trust-mini b{display:block;font-size:13px;margin-bottom:3px}
+.trust-mini span{font-size:12px;color:var(--muted)}
+.selector-shell{display:grid;grid-template-columns:280px 1fr;gap:18px}
+.selector-nav{display:grid;gap:9px;align-content:start}
+.route-btn{border:1px solid var(--line);background:rgba(255,253,248,.58);border-radius:16px;text-align:left;padding:16px 17px;cursor:pointer;color:var(--ink);transition:.18s ease}
+.route-btn:hover{background:#fff}
+.route-btn[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 14px 36px rgba(29,39,34,.14)}
+.route-btn small{display:block;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;opacity:.68;margin-bottom:5px}
+.route-btn strong{display:block;font-size:15px}
+.route-panel{display:none;background:var(--paper);border:1px solid var(--line);border-radius:26px;overflow:hidden;min-height:440px}
+.route-panel.active{display:grid;grid-template-columns:1.02fr .98fr}
+.route-copy{padding:34px}
+.route-copy .problem{font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--clay)}
+.route-copy h3{font-size:clamp(36px,4.5vw,56px);line-height:.99;margin:12px 0 14px}
+.route-copy .intro{font-size:17px;color:var(--muted);margin:0 0 24px}
+.route-list{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.route-list li{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.route-list .dot{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:#E2E9E2;color:var(--ok);font-size:10px;font-weight:900;flex:0 0 20px;margin-top:1px}
+.outcome{margin-top:24px;padding:16px 17px;border-radius:14px;background:#EFEAE0}
+.outcome small{display:block;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);margin-bottom:5px}
+.outcome b{font-family:var(--serif);font-size:22px}
+.route-media{position:relative;min-height:440px;background:#d6d2ca}
+.route-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.route-badge{position:absolute;left:18px;bottom:18px;right:18px;background:rgba(29,39,34,.88);color:white;border-radius:15px;padding:14px 15px;font-size:12px}
+.route-badge b{display:block;margin-bottom:3px}
 .dark{background:var(--ink);color:white}
 .dark-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:48px;align-items:center}
-.dark h2{font-size:clamp(42px,5.2vw,63px);line-height:.98;margin:8px 0 14px}
-.dark p{font-size:18px;color:#CFD6D1;margin:0;max-width:650px}
-.you-us{display:grid;grid-template-columns:1fr 1.22fr;gap:12px}
+.dark h2{font-size:clamp(42px,5.1vw,62px);line-height:.98;margin:8px 0 14px}
+.dark p{font-size:18px;color:#CFD7D2;max-width:650px;margin:0}
+.you-us{display:grid;grid-template-columns:.85fr 1.15fr;gap:12px}
 .you-card,.us-card{border-radius:20px;padding:24px}
-.you-card{border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.04)}
+.you-card{border:1px solid var(--line-dark);background:rgba(255,255,255,.04)}
 .us-card{background:#F6F2E9;color:var(--ink)}
-.you-card h3,.us-card h3{font-size:26px;margin:0 0 17px}
+.you-card h3,.us-card h3{font-size:27px;margin:0 0 18px}
 .clean-list{list-style:none;padding:0;margin:0;display:grid;gap:11px}
 .clean-list li{display:flex;gap:10px;align-items:flex-start;font-size:14px}
-.you-card .clean-list{color:#CCD4CF}
-.tick{margin-top:2px;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:10px;flex:0 0 18px;background:rgba(255,255,255,.13)}
-.us-card .tick{background:#DDE6DD;color:var(--ok)}
-.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.process-card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:24px;position:relative;min-height:280px}
+.you-card .clean-list{color:#D0D7D2}
+.tick{margin-top:1px;width:19px;height:19px;display:grid;place-items:center;border-radius:50%;flex:0 0 19px;background:rgba(255,255,255,.12);font-size:10px}
+.us-card .tick{background:#DCE7DE;color:var(--ok)}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.process-card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:24px;min-height:282px;position:relative}
 .process-card .n{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--sand);font-family:var(--serif);font-size:20px;margin-bottom:42px}
-.process-card:nth-child(4) .n{background:var(--olive);color:white}
-.process-card h3{font-size:27px;margin:0 0 9px}
-.process-card p{font-size:14px;color:var(--muted);margin:0}
-.process-card small{position:absolute;left:24px;bottom:22px;font-size:11px;font-weight:800;color:#879088}
-.deliverables{background:#E8E1D5}
-.deliver-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px;align-items:center}
-.deliver-copy h2{font-size:clamp(42px,5.2vw,62px);line-height:.98;margin:8px 0 14px}
-.deliver-copy p{font-size:17px;color:#606862;max-width:560px}
-.deliver-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.deliver-card{background:rgba(255,253,249,.78);border:1px solid rgba(70,80,71,.13);border-radius:17px;padding:19px}
-.deliver-card b{display:block;margin-bottom:6px}
-.deliver-card span{font-size:13px;color:#66706A}
-.case{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:stretch}
-.case-story{background:var(--olive);color:white;border-radius:24px;padding:34px}
-.case-story h2{font-size:clamp(40px,4.8vw,58px);line-height:.98;margin:8px 0 14px}
-.case-story p{color:#E1E6DF;font-size:17px}
-.case-story .disclaimer{font-size:11px;color:#CAD2CA;margin-top:30px}
-.money-card{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:30px}
-.money-title{display:flex;justify-content:space-between;gap:15px;align-items:start;margin-bottom:15px}
-.money-title strong{font-family:var(--serif);font-size:26px}
-.money-title span{font-size:11px;background:#EEE7DB;padding:7px 9px;border-radius:999px;font-weight:850}
-.money-row{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14px}
-.money-row span{color:var(--muted)}
-.money-row strong{white-space:nowrap}
-.money-total{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-top:18px;background:var(--ink);color:white;border-radius:16px;padding:19px}
-.money-total b{font-size:28px;font-family:var(--serif)}
-.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.trust-card{background:rgba(255,253,249,.7);border:1px solid var(--line);border-radius:19px;padding:24px}
-.trust-icon{width:40px;height:40px;border-radius:12px;background:#E6EADF;display:grid;place-items:center;color:var(--olive);margin-bottom:34px;font-weight:900}
-.trust-card h3{font-size:27px;margin:0 0 8px}
-.trust-card p{font-size:14px;color:var(--muted);margin:0}
-.tech{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.process-card:last-child .n{background:var(--forest);color:white}
+.process-card h3{font-size:29px;line-height:1.02;margin:0 0 8px}
+.process-card p{margin:0;color:var(--muted);font-size:14px}
+.process-card small{position:absolute;bottom:21px;left:24px;color:#849087;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.receive{background:#E9E2D7}
+.receive-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:center}
+.receive-copy h2{font-size:clamp(42px,5.1vw,62px);line-height:.98;margin:8px 0 14px}
+.receive-copy p{font-size:17px;color:#606A64;max-width:560px}
+.receive-items{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.receive-item{background:rgba(255,253,248,.8);border:1px solid rgba(68,82,70,.13);border-radius:17px;padding:20px}
+.receive-item b{display:block;margin-bottom:5px}
+.receive-item span{font-size:13px;color:#647069}
+.status-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.status{border:1px solid var(--line);background:rgba(255,253,248,.66);border-radius:16px;padding:18px}
+.status .tag{display:inline-flex;padding:6px 9px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+.status:nth-child(1) .tag{background:#EEE7DB;color:#816A4E}
+.status:nth-child(2) .tag{background:#E6E8DE;color:#5D6C54}
+.status:nth-child(3) .tag{background:#DDE7E0;color:#3F6652}
+.status:nth-child(4) .tag{background:var(--ink);color:white}
+.status h3{font-size:25px;margin:0 0 6px}
+.status p{margin:0;color:var(--muted);font-size:13px}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.case-card{border-radius:24px;padding:31px;border:1px solid var(--line);background:var(--paper)}
+.case-card.complex{background:var(--forest);color:white;border-color:var(--forest)}
+.case-card .eyebrow{margin-bottom:10px}
+.case-card.complex .eyebrow{color:#E6DCCB}
+.case-card h3{font-size:36px;line-height:1;margin:0 0 13px}
+.case-card p{margin:0 0 20px;color:var(--muted)}
+.case-card.complex p{color:#E1E7E2}
+.flow{display:flex;gap:7px;flex-wrap:wrap}
+.flow span{padding:8px 10px;border-radius:999px;background:#EFEAE1;font-size:11px;font-weight:700}
+.case-card.complex .flow span{background:rgba(255,255,255,.1)}
+.technology{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
 .tech-main{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:30px}
-.tech-main h2{font-size:clamp(39px,4.7vw,58px);line-height:.98;margin:10px 0 13px}
-.tech-main p{color:var(--muted);font-size:17px}
-.tech-side{display:grid;gap:12px}
-.tech-item{border:1px solid var(--line);border-radius:18px;padding:20px;background:rgba(255,253,249,.65)}
-.tech-item b{display:block;margin-bottom:5px}
+.tech-main h2{font-size:clamp(40px,4.8vw,58px);line-height:.98;margin:9px 0 13px}
+.tech-main p{font-size:17px;color:var(--muted);margin:0}
+.tech-list{display:grid;gap:11px}
+.tech-item{background:rgba(255,253,248,.65);border:1px solid var(--line);border-radius:17px;padding:19px}
+.tech-item b{display:block;margin-bottom:4px}
 .tech-item span{font-size:13px;color:var(--muted)}
-.folder-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:46px;align-items:center}
-.folder-art{min-height:430px;position:relative}
-.sheet{position:absolute;background:var(--paper);border:1px solid var(--line);box-shadow:0 26px 60px rgba(31,38,34,.12);border-radius:12px}
-.sheet.back{width:68%;height:305px;left:6%;top:86px;transform:rotate(-5deg)}
-.sheet.front{width:68%;height:350px;right:8%;top:32px;transform:rotate(4deg);padding:28px}
-.sheet .eyebrow{font-size:10px}
+.folder-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:44px;align-items:center}
+.folder-art{min-height:420px;position:relative}
+.sheet{position:absolute;background:var(--paper);border:1px solid var(--line);box-shadow:0 26px 60px rgba(29,39,34,.12);border-radius:12px}
+.sheet.back{width:67%;height:300px;left:7%;top:82px;transform:rotate(-5deg)}
+.sheet.front{width:68%;height:345px;right:8%;top:31px;transform:rotate(4deg);padding:28px}
 .sheet h3{font-size:36px;line-height:1;margin:14px 0 8px}
-.sheet p{color:var(--muted);font-size:14px}
-.sheet-bar{height:11px;border-radius:999px;background:linear-gradient(90deg,var(--olive) 0 28%,var(--sage) 28% 54%,var(--copper) 54% 76%,var(--sand) 76%);margin-top:90px}
-.folder-copy h2{font-size:clamp(40px,5vw,60px);line-height:1;margin:10px 0 14px}
+.sheet p{font-size:14px;color:var(--muted);margin:0}
+.sheet-bar{height:11px;border-radius:999px;background:linear-gradient(90deg,var(--forest) 0 28%,var(--sage) 28% 54%,var(--clay) 54% 76%,var(--sand) 76%);margin-top:92px}
+.folder-copy h2{font-size:clamp(40px,5vw,60px);line-height:.99;margin:8px 0 13px}
 .folder-copy p{font-size:18px;color:var(--muted)}
-.folder-copy ul{padding-left:20px;color:#606860}
+.folder-copy ul{padding-left:20px;color:#5F6A63}
 .folder-copy li{margin:9px 0}
-.cta{padding:88px 0}
-.cta-box{background:linear-gradient(135deg,#394536,#55614A);color:white;border-radius:28px;padding:52px;display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center;overflow:hidden;position:relative}
-.cta-box:after{content:'';position:absolute;right:-110px;top:-90px;width:300px;height:300px;border:1px solid rgba(255,255,255,.13);border-radius:50%}
+.cta{padding:86px 0}
+.cta-box{background:linear-gradient(135deg,#394A3E,#596A5C);color:white;border-radius:28px;padding:50px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;position:relative;overflow:hidden}
+.cta-box:after{content:"";position:absolute;right:-95px;top:-100px;width:300px;height:300px;border:1px solid rgba(255,255,255,.13);border-radius:50%}
 .cta-box h2{font-size:clamp(42px,5vw,62px);line-height:1;margin:0 0 10px;position:relative;z-index:1}
-.cta-box p{margin:0;color:#DEE3DC;max-width:760px;position:relative;z-index:1}
+.cta-box p{margin:0;max-width:760px;color:#E0E6E1;position:relative;z-index:1}
 .cta-box .btn{background:white;color:var(--ink);border-color:white;position:relative;z-index:1}
 footer{padding:30px 0 42px;border-top:1px solid var(--line)}
-.footer{display:flex;justify-content:space-between;align-items:center;gap:20px;color:#737A73;font-size:13px}
-.fade{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}.fade.on{opacity:1;transform:none}
+.footer{display:flex;justify-content:space-between;gap:20px;align-items:center;color:#737D76;font-size:13px}
 .mobile-cta{display:none}
+.reveal{opacity:0;transform:translateY(13px);transition:opacity .45s ease,transform .45s ease}
+.reveal.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
 @media(max-width:1020px){
   .navlinks{display:none}
-  .hero-grid,.dark-grid,.deliver-grid,.case,.tech,.folder-grid{grid-template-columns:1fr}
-  .problem-grid{grid-template-columns:1fr}
-  .process-grid{grid-template-columns:1fr 1fr}
-  .quicknav-grid{grid-template-columns:1fr 1fr}
+  .hero-grid,.dark-grid,.receive-grid,.technology,.folder-grid{grid-template-columns:1fr}
   .hero-media{min-height:500px}
-  .hero-photo{inset:0;border-radius:80px 20px 20px 20px}
-  .hero-panel{left:18px}
+  .hero-photo{inset:0;border-radius:84px 22px 22px 22px}
+  .hero-card{left:18px}
+  .selector-shell{grid-template-columns:1fr}
+  .selector-nav{grid-template-columns:repeat(4,1fr)}
+  .route-btn{padding:13px}
+  .route-btn small{display:none}
+  .process{grid-template-columns:1fr 1fr}
+  .trust-strip-grid{grid-template-columns:1fr 1fr}
+  .trust-mini:nth-child(2){border-right:0}
+  .trust-mini:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .status-grid{grid-template-columns:1fr 1fr}
 }
-@media(max-width:700px){
-  .wrap{width:min(100% - 22px,1180px)}
-  .nav{height:68px}.wordmark{font-size:20px}.nav>.btn{display:none}
-  .hero{padding-top:44px}h1{font-size:52px}.hero-copy .lead{font-size:18px}
-  .hero-media{min-height:390px}.hero-panel{width:225px}.hero-location{right:8px}
-  .quicknav-grid,.process-grid,.deliver-cards,.trust-grid,.you-us{grid-template-columns:1fr}
-  .quicknav{display:none}
-  section{padding:62px 0}
-  .problem-card{grid-template-columns:1fr}.problem-img{min-height:210px;height:210px}
-  .dark-grid{gap:30px}
-  .case-story,.money-card,.tech-main,.cta-box{padding:26px}
-  .folder-art{min-height:360px}.sheet.back,.sheet.front{width:76%}
-  .footer{display:block}.footer div+div{margin-top:8px}
+@media(max-width:720px){
+  .wrap{width:min(100% - 22px,var(--max))}
+  .nav{height:66px}.brand{font-size:20px}.nav>.btn{display:none}
   body{padding-bottom:72px}
-  .mobile-cta{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:80;background:var(--ink);color:white;border-radius:999px;height:52px;align-items:center;justify-content:center;font-weight:850;box-shadow:0 12px 35px rgba(30,41,36,.28)}
+  .hero{padding-top:42px}
+  .hero h1{font-size:52px}
+  .hero .lead{font-size:18px}
+  .hero-media{min-height:390px}
+  .hero-card{width:225px;padding:15px}
+  .hero-card strong{font-size:20px}
+  section{padding:60px 0}
+  .trust-strip-grid{grid-template-columns:1fr}
+  .trust-mini{border-right:0!important;border-bottom:1px solid var(--line)}
+  .trust-mini:last-child{border-bottom:0}
+  .selector-nav{grid-template-columns:1fr 1fr}
+  .route-panel.active{grid-template-columns:1fr}
+  .route-media{min-height:260px;order:-1}
+  .route-copy{padding:24px}
+  .route-copy h3{font-size:38px}
+  .you-us,.process,.receive-items,.status-grid,.case-grid{grid-template-columns:1fr}
+  .process-card{min-height:245px}
+  .case-card,.tech-main,.cta-box{padding:25px}
+  .folder-art{min-height:355px}
+  .sheet.back,.sheet.front{width:76%}
+  .footer{display:block}.footer div+div{margin-top:7px}
+  .mobile-cta{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:80;height:52px;background:var(--ink);color:white;border-radius:999px;align-items:center;justify-content:center;font-weight:800;box-shadow:0 12px 35px rgba(29,39,34,.28)}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
 <header class="nav-shell">
   <div class="wrap nav">
-    <a href="#inicio" class="wordmark"><span class="mark"></span><span>Deep Living</span></a>
-    <nav class="navlinks">
-      <a href="#problemas">Qué resolvemos</a>
+    <a class="brand" href="#inicio" aria-label="Deep Living, inicio"><span class="mark" aria-hidden="true"></span><span>Deep Living</span></a>
+    <nav class="navlinks" aria-label="Navegación principal">
+      <a href="#resolver">Qué resolvemos</a>
       <a href="#como">Cómo lo hacemos</a>
-      <a href="#entregables">Qué recibes</a>
-      <a href="#confianza">Por qué confiar</a>
+      <a href="#recibes">Qué recibes</a>
+      <a href="#confianza">Cómo verificamos</a>
     </nav>
     <a class="btn btn-primary" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">Cuéntanos tu caso →</a>
   </div>
 </header>
 
-<main id="inicio">
-<section class="hero">
+<main id="contenido">
+<section class="hero" id="inicio">
   <div class="wrap hero-grid">
-    <div class="hero-copy fade">
-      <div class="eyebrow">Vender · cambiarte · construir · invertir</div>
-      <h1>Tu próxima etapa no debería convertirse en otro trabajo.</h1>
-      <p class="lead">Si quieres vender, cambiarte, construir en tu parcela o invertir, <strong>ordenamos el proceso completo para que tú puedas decidir sin pasar semanas buscando, llamando y coordinando.</strong></p>
+    <div class="reveal">
+      <div class="eyebrow">Venta · cambio de vivienda · casa en parcela · inversión</div>
+      <h1>Resuelve tu próxima etapa sin coordinarlo todo tú.</h1>
+      <p class="lead">Si quieres vender, cambiarte, construir o invertir, <strong>ordenamos las opciones, los números y los próximos pasos para que tú tomes pocas decisiones con información clara.</strong></p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">Cuéntanos qué quieres lograr →</a>
-        <a class="btn btn-light" href="#problemas">Ver cómo te ayudamos</a>
+        <a class="btn btn-primary" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">Cuéntanos qué necesitas →</a>
+        <a class="btn btn-ghost" href="#resolver">Ver qué problemas resolvemos</a>
       </div>
-      <div class="hero-proof">
-        <div><span class="check">✓</span> Pocas opciones, bien filtradas</div>
-        <div><span class="check">✓</span> Números claros antes de decidir</div>
-        <div><span class="check">✓</span> Un solo equipo coordinando</div>
+      <div class="proof-row">
+        <div class="proof-item"><span class="check">✓</span>Pocas opciones, bien filtradas</div>
+        <div class="proof-item"><span class="check">✓</span>Números antes de decidir</div>
+        <div class="proof-item"><span class="check">✓</span>Un punto de coordinación</div>
       </div>
     </div>
 
-    <div class="hero-media fade">
+    <div class="hero-media reveal">
       <div class="hero-photo">
-        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90" alt="Casa contemporánea en un entorno natural">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90" alt="Casa contemporánea rodeada de naturaleza">
       </div>
-      <div class="hero-panel">
-        <small>El objetivo</small>
-        <strong>Llegar al resultado, no llenarte de trámites.</strong>
-        <p>La tecnología y la coordinación trabajan por detrás.</p>
+      <div class="hero-card">
+        <small>La idea</small>
+        <strong>Tu caso puede tener veinte piezas. Tú sigues viendo un solo plan.</strong>
+        <p>La complejidad queda de nuestro lado.</p>
       </div>
-      <div class="hero-location">Maule · Chile</div>
+      <div class="location">Maule · Chile</div>
     </div>
   </div>
 </section>
 
-<div class="quicknav">
-  <div class="wrap quicknav-grid">
-    <a class="quick" href="#vender">Quiero vender <em>→</em></a>
-    <a class="quick" href="#cambiar">Quiero cambiarme <em>→</em></a>
-    <a class="quick" href="#construir">Ya tengo parcela <em>→</em></a>
-    <a class="quick" href="#invertir">Quiero invertir <em>→</em></a>
+<div class="trust-strip" aria-label="Principios del servicio">
+  <div class="wrap trust-strip-grid">
+    <div class="trust-mini"><b>Un solo punto de contacto</b><span>No tienes que perseguir a cada proveedor.</span></div>
+    <div class="trust-mini"><b>Pocas alternativas</b><span>No te entregamos cien enlaces para que tú filtres.</span></div>
+    <div class="trust-mini"><b>Costos explicados</b><span>Separamos lo estimado de lo realmente cotizado.</span></div>
+    <div class="trust-mini"><b>Decisión final tuya</b><span>La tecnología ayuda; no decide por ti.</span></div>
   </div>
 </div>
 
-<section id="problemas">
+<section id="resolver">
   <div class="wrap">
-    <div class="section-head fade">
+    <div class="section-head reveal">
       <div class="eyebrow">Qué problemas resolvemos</div>
-      <h2>Partimos por lo que te está frenando.</h2>
-      <p>No vendemos una lista de servicios. Resolvemos situaciones concretas que normalmente obligan a hablar con demasiadas personas, comparar información incompleta y tomar decisiones con incertidumbre.</p>
+      <h2>Elige la situación que más se parece a la tuya.</h2>
+      <p>El servicio puede ser muy simple —solo vender— o coordinar una transición completa. No te obligamos a contratar cosas que no necesitas.</p>
     </div>
 
-    <div class="problem-grid">
-      <article class="problem-card fade" id="vender">
-        <div class="problem-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Departamento luminoso"></div>
-        <div class="problem-body">
-          <div class="problem-num">01 · VENDER</div>
-          <h3>“Quiero vender, pero no quiero perder meses ni vender mal.”</h3>
-          <div class="label">El problema</div>
-          <p class="problem-text">Precio poco claro, publicaciones débiles, compradores curiosos, visitas que no avanzan y papeles que aparecen tarde.</p>
-          <div class="solution"><b>Lo resolvemos así</b><span>Valoramos, presentamos, difundimos, filtramos interesados, negociamos y coordinamos el cierre.</span></div>
+    <div class="selector-shell reveal">
+      <div class="selector-nav" role="tablist" aria-label="Tipos de necesidad">
+        <button class="route-btn" id="tab-vender" role="tab" aria-selected="true" aria-controls="panel-vender" data-target="vender"><small>01</small><strong>Solo quiero vender</strong></button>
+        <button class="route-btn" id="tab-cambiar" role="tab" aria-selected="false" aria-controls="panel-cambiar" data-target="cambiar"><small>02</small><strong>Quiero vender y cambiarme</strong></button>
+        <button class="route-btn" id="tab-construir" role="tab" aria-selected="false" aria-controls="panel-construir" data-target="construir"><small>03</small><strong>Ya tengo parcela</strong></button>
+        <button class="route-btn" id="tab-invertir" role="tab" aria-selected="false" aria-controls="panel-invertir" data-target="invertir"><small>04</small><strong>Quiero invertir</strong></button>
+      </div>
+
+      <article class="route-panel active" id="panel-vender" role="tabpanel" aria-labelledby="tab-vender">
+        <div class="route-copy">
+          <div class="problem">Problema</div>
+          <h3>Tienes una propiedad. Quieres venderla bien y seguir con tu vida.</h3>
+          <p class="intro">No necesitas un plan patrimonial completo. Necesitas una venta profesional, menos pérdida de tiempo y claridad hasta el cierre.</p>
+          <ul class="route-list">
+            <li><span class="dot">✓</span><span>Definimos una estrategia de precio y presentación.</span></li>
+            <li><span class="dot">✓</span><span>Preparamos contenido, publicación y difusión.</span></li>
+            <li><span class="dot">✓</span><span>Filtramos interesados y coordinamos visitas.</span></li>
+            <li><span class="dot">✓</span><span>Acompañamos negociación, documentación y cierre.</span></li>
+          </ul>
+          <div class="outcome"><small>Objetivo</small><b>Una venta ordenada, con menos carga para ti.</b></div>
+        </div>
+        <div class="route-media">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1100&q=88" alt="Interior de departamento bien presentado">
+          <div class="route-badge"><b>Este es el caso más simple.</b> Si solo quieres vender, el servicio termina ahí.</div>
         </div>
       </article>
 
-      <article class="problem-card fade" id="cambiar">
-        <div class="problem-img"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=85" alt="Casa familiar"></div>
-        <div class="problem-body">
-          <div class="problem-num">02 · CAMBIARTE</div>
-          <h3>“Quiero vender y cambiar de vida, pero no sé cómo ordenar todo.”</h3>
-          <div class="label">El problema</div>
-          <p class="problem-text">Hay que vender, elegir zona, comprar o construir, calcular gastos, mantener caja y coordinar los tiempos.</p>
-          <div class="solution"><b>Lo resolvemos así</b><span>Primero calculamos cómo quedarías. Luego buscamos pocas alternativas y coordinamos la transición completa.</span></div>
+      <article class="route-panel" id="panel-cambiar" role="tabpanel" aria-labelledby="tab-cambiar" hidden>
+        <div class="route-copy">
+          <div class="problem">Problema</div>
+          <h3>Vender donde vives es solo la mitad. Después tienes que llegar bien a tu nueva vida.</h3>
+          <p class="intro">Aquí importa saber cuánto capital quedará, dónde vivir, cuánto gastar y cómo coordinar los tiempos sin improvisar.</p>
+          <ul class="route-list">
+            <li><span class="dot">✓</span><span>Modelamos el destino antes de vender.</span></li>
+            <li><span class="dot">✓</span><span>Comparamos zonas, propiedades, casas y costos.</span></li>
+            <li><span class="dot">✓</span><span>Mostramos cuánto dinero queda en cada escenario.</span></li>
+            <li><span class="dot">✓</span><span>Coordinamos venta y siguiente etapa según tu caso.</span></li>
+          </ul>
+          <div class="outcome"><small>Objetivo</small><b>Saber cómo vas a quedar antes de mover tu capital.</b></div>
+        </div>
+        <div class="route-media">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1100&q=88" alt="Casa familiar en un entorno residencial">
+          <div class="route-badge"><b>Primero el destino, después la venta.</b> Evitamos que la fuente de capital se venda sin saber qué viene después.</div>
         </div>
       </article>
 
-      <article class="problem-card fade" id="construir">
-        <div class="problem-img"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85" alt="Casa construida en parcela"></div>
-        <div class="problem-body">
-          <div class="problem-num">03 · CONSTRUIR</div>
-          <h3>“Ya tengo parcela. Quiero mi casa lista, no coordinar diez proveedores.”</h3>
-          <div class="label">El problema</div>
-          <p class="problem-text">Casa, fundaciones, cierre, agua, sanitaria, electricidad, drenaje, permisos y garantías aparecen separados.</p>
-          <div class="solution"><b>Lo resolvemos así</b><span>Comparamos soluciones completas, alcances, plazos y proveedores para llegar a un presupuesto entendible y ejecutable.</span></div>
+      <article class="route-panel" id="panel-construir" role="tabpanel" aria-labelledby="tab-construir" hidden>
+        <div class="route-copy">
+          <div class="problem">Problema</div>
+          <h3>El precio de una “casa desde…” casi nunca es el precio de vivir ahí.</h3>
+          <p class="intro">Fundaciones, transporte, agua, sanitaria, electricidad, drenaje, acceso, terminaciones y permisos pueden cambiar por completo el presupuesto.</p>
+          <ul class="route-list">
+            <li><span class="dot">✓</span><span>Revisamos las condiciones del terreno y el acceso.</span></li>
+            <li><span class="dot">✓</span><span>Comparamos soluciones con alcance y exclusiones visibles.</span></li>
+            <li><span class="dot">✓</span><span>Ordenamos casa, habilitación y proveedores en un presupuesto completo.</span></li>
+            <li><span class="dot">✓</span><span>Coordinamos los siguientes pasos hasta el alcance contratado.</span></li>
+          </ul>
+          <div class="outcome"><small>Objetivo</small><b>Conocer el costo real para llegar a una casa habitable.</b></div>
+        </div>
+        <div class="route-media">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1100&q=88" alt="Casa nueva construida en un entorno natural">
+          <div class="route-badge"><b>“Llave en mano” debe estar definido.</b> Qué incluye, qué no incluye, plazo, precio y garantías.</div>
         </div>
       </article>
 
-      <article class="problem-card fade" id="invertir">
-        <div class="problem-img"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Entorno natural y propiedad"></div>
-        <div class="problem-body">
-          <div class="problem-num">04 · INVERTIR</div>
-          <h3>“Tengo capital disponible y no quiero comprar algo solo por comprar.”</h3>
-          <div class="label">El problema</div>
-          <p class="problem-text">Hay demasiadas alternativas y cuesta comparar precio, ubicación, uso, costos futuros y facilidad de salida.</p>
-          <div class="solution"><b>Lo resolvemos así</b><span>Definimos qué buscas conseguir, filtramos alternativas y te mostramos escenarios comparables antes de decidir.</span></div>
+      <article class="route-panel" id="panel-invertir" role="tabpanel" aria-labelledby="tab-invertir" hidden>
+        <div class="route-copy">
+          <div class="problem">Problema</div>
+          <h3>Tienes capital disponible, pero demasiadas propiedades parecen una oportunidad.</h3>
+          <p class="intro">La decisión necesita contexto: objetivo, precio, ubicación, costos, uso posible y qué tan fácil sería salir de esa inversión más adelante.</p>
+          <ul class="route-list">
+            <li><span class="dot">✓</span><span>Definimos qué quieres lograr con ese capital.</span></li>
+            <li><span class="dot">✓</span><span>Filtramos alternativas que realmente encajan.</span></li>
+            <li><span class="dot">✓</span><span>Comparamos escenarios con la misma estructura.</span></li>
+            <li><span class="dot">✓</span><span>Separamos hechos verificados de supuestos pendientes.</span></li>
+          </ul>
+          <div class="outcome"><small>Objetivo</small><b>Menos opciones, mejores preguntas y una decisión más informada.</b></div>
+        </div>
+        <div class="route-media">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=88" alt="Paisaje natural con potencial inmobiliario">
+          <div class="route-badge"><b>No prometemos plusvalía.</b> Comparamos información, costos y escenarios para que tú decidas.</div>
         </div>
       </article>
     </div>
@@ -306,29 +387,29 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
 
 <section class="dark">
   <div class="wrap dark-grid">
-    <div class="fade">
-      <div class="eyebrow" style="color:#DCCCB2">Tu tiempo importa</div>
+    <div class="reveal">
+      <div class="eyebrow" style="color:#E3D7C4">La experiencia</div>
       <h2>Tú decides lo importante. Nosotros hacemos el trabajo pesado.</h2>
-      <p>No necesitas aprender una plataforma ni convertirte en experto inmobiliario. La experiencia debe sentirse simple aunque por detrás haya muchas piezas.</p>
+      <p>Una buena experiencia no significa mostrarte más información. Significa quitarte trabajo sin quitarte control.</p>
     </div>
 
-    <div class="you-us fade">
+    <div class="you-us reveal">
       <div class="you-card">
-        <h3>Tú</h3>
+        <h3>Tú haces 3 cosas</h3>
         <ul class="clean-list">
-          <li><span class="tick">1</span><span>Nos cuentas qué quieres lograr</span></li>
-          <li><span class="tick">2</span><span>Revisas pocas alternativas</span></li>
-          <li><span class="tick">3</span><span>Tomas las decisiones finales</span></li>
+          <li><span class="tick">1</span><span>Nos cuentas qué quieres lograr.</span></li>
+          <li><span class="tick">2</span><span>Revisas pocas alternativas bien explicadas.</span></li>
+          <li><span class="tick">3</span><span>Tomas las decisiones finales.</span></li>
         </ul>
       </div>
       <div class="us-card">
-        <h3>Nosotros</h3>
+        <h3>Nosotros hacemos el resto</h3>
         <ul class="clean-list">
-          <li><span class="tick">✓</span><span>Buscamos y filtramos opciones</span></li>
-          <li><span class="tick">✓</span><span>Ordenamos costos, plazos y documentos</span></li>
-          <li><span class="tick">✓</span><span>Comparamos propiedades y proveedores</span></li>
-          <li><span class="tick">✓</span><span>Identificamos información pendiente y riesgos</span></li>
-          <li><span class="tick">✓</span><span>Coordinamos el proceso y los siguientes pasos</span></li>
+          <li><span class="tick">✓</span><span>Buscamos y filtramos.</span></li>
+          <li><span class="tick">✓</span><span>Ordenamos precios, documentos y plazos.</span></li>
+          <li><span class="tick">✓</span><span>Comparamos propiedades y proveedores.</span></li>
+          <li><span class="tick">✓</span><span>Marcamos qué está confirmado y qué falta revisar.</span></li>
+          <li><span class="tick">✓</span><span>Coordinamos los siguientes pasos.</span></li>
         </ul>
       </div>
     </div>
@@ -337,123 +418,116 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
 
 <section id="como">
   <div class="wrap">
-    <div class="section-head fade">
+    <div class="section-head reveal">
       <div class="eyebrow">Cómo lo hacemos</div>
-      <h2>De tu problema a un plan ejecutable.</h2>
-      <p>Cada caso puede ser distinto, pero la lógica es la misma: entender, ordenar, verificar y ejecutar.</p>
+      <h2>Primero entendemos el resultado. Después buscamos.</h2>
+      <p>Así evitamos empezar con avisos y proveedores antes de saber qué solución realmente necesitas.</p>
     </div>
 
-    <div class="process-grid">
-      <article class="process-card fade">
+    <div class="process">
+      <article class="process-card reveal">
         <div class="n">1</div>
-        <h3>Entendemos</h3>
-        <p>Qué tienes hoy, qué quieres conseguir, cuánto capital existe y qué restricciones importan.</p>
-        <small>Objetivo claro</small>
+        <h3>Definimos tu meta</h3>
+        <p>Qué tienes hoy, qué quieres lograr, qué necesitas conservar y qué límites no se pueden romper.</p>
+        <small>Destino antes que catálogo</small>
       </article>
-      <article class="process-card fade">
+      <article class="process-card reveal">
         <div class="n">2</div>
-        <h3>Construimos escenarios</h3>
-        <p>Antes de mover dinero, calculamos distintas rutas y cuánto te quedaría en cada una.</p>
-        <small>Números antes de decidir</small>
+        <h3>Ordenamos los números</h3>
+        <p>Qué entra, qué se usa, qué gastos faltan y cuánto debería quedar disponible.</p>
+        <small>Capital antes que impulso</small>
       </article>
-      <article class="process-card fade">
+      <article class="process-card reveal">
         <div class="n">3</div>
         <h3>Buscamos y verificamos</h3>
-        <p>Propiedades, terrenos, casas y proveedores se filtran por costo, disponibilidad y encaje con tu caso.</p>
-        <small>Pocas opciones, mejor información</small>
+        <p>Filtramos opciones, confirmamos lo importante y descartamos alternativas que no encajan.</p>
+        <small>Pocas opciones, mejor evidencia</small>
       </article>
-      <article class="process-card fade">
+      <article class="process-card reveal">
         <div class="n">4</div>
         <h3>Coordinamos</h3>
-        <p>Ordenamos los siguientes pasos hasta el resultado contratado: venta, compra, construcción o inversión.</p>
-        <small>Una sola ruta de trabajo</small>
+        <p>Ordenamos los pasos hasta el resultado contratado: venta, compra, construcción o inversión.</p>
+        <small>Un solo plan de ejecución</small>
       </article>
     </div>
   </div>
 </section>
 
-<section class="deliverables" id="entregables">
-  <div class="wrap deliver-grid">
-    <div class="deliver-copy fade">
+<section class="receive" id="recibes">
+  <div class="wrap receive-grid">
+    <div class="receive-copy reveal">
       <div class="eyebrow">Qué recibes</div>
       <h2>No cien enlaces. Un caso bien armado.</h2>
-      <p>La información llega en un formato pensado para decidir: claro, visual, compartible y con lo importante separado de lo accesorio.</p>
+      <p>La información se entrega para decidir, no para trasladarte nuestro trabajo de investigación.</p>
     </div>
-
-    <div class="deliver-cards fade">
-      <div class="deliver-card"><b>Presupuesto maestro</b><span>Cuánto entra, cuánto se usa, cuánto queda y qué sigue siendo estimado.</span></div>
-      <div class="deliver-card"><b>Opciones finalistas</b><span>Pocas alternativas con diferencias, ventajas, riesgos y costos visibles.</span></div>
-      <div class="deliver-card"><b>Carpeta física y digital</b><span>Fotos, mapas, documentos, cronograma y decisiones en un formato que puedes revisar y compartir.</span></div>
-      <div class="deliver-card"><b>Próximos pasos</b><span>Qué hay que hacer, quién debe hacerlo y qué información falta antes de avanzar.</span></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap case">
-    <div class="case-story fade">
-      <div class="eyebrow" style="color:#E8DDC8">Ejemplo de transición</div>
-      <h2>Vender no es el final. Es el punto de partida.</h2>
-      <p>Una persona puede vender su departamento, pasar a una vivienda en parcela, comprar un vehículo, reservar capital y destinar otra parte a una inversión. Lo importante es mirar todo junto antes de ejecutar.</p>
-      <p class="disclaimer">Ejemplo ilustrativo. No representa una recomendación financiera ni una cotización cerrada.</p>
-    </div>
-    <div class="money-card fade">
-      <div class="money-title"><strong>Escenario simple</strong><span>Ejemplo</span></div>
-      <div class="money-row"><span>Venta estimada</span><strong>$90 M</strong></div>
-      <div class="money-row"><span>Nueva vivienda</span><strong>− $38 M</strong></div>
-      <div class="money-row"><span>Vehículo</span><strong>− $8 M</strong></div>
-      <div class="money-row"><span>Inversión</span><strong>− $28 M</strong></div>
-      <div class="money-row"><span>Gastos y transición</span><strong>− $4 M</strong></div>
-      <div class="money-total"><span>Dinero que queda disponible</span><b>$12 M</b></div>
+    <div class="receive-items reveal">
+      <div class="receive-item"><b>Plan de ruta</b><span>Qué se hará primero, qué depende de qué y qué decisiones vienen después.</span></div>
+      <div class="receive-item"><b>Presupuesto maestro</b><span>Qué entra, qué sale, qué sigue estimado y cuánto capital queda.</span></div>
+      <div class="receive-item"><b>Opciones finalistas</b><span>Alternativas comparadas con las mismas variables, no una lista desordenada de avisos.</span></div>
+      <div class="receive-item"><b>Carpeta de decisión</b><span>Fotos, mapas, documentos, costos, estado de verificación y próximos pasos.</span></div>
     </div>
   </div>
 </section>
 
 <section id="confianza">
   <div class="wrap">
-    <div class="section-head fade">
-      <div class="eyebrow">Cómo cuidamos la confianza</div>
-      <h2>Lo que no sabemos, no lo disfrazamos de certeza.</h2>
-      <p>La reputación del servicio depende de distinguir claramente entre una estimación, una cotización y una condición ya confirmada.</p>
+    <div class="section-head reveal">
+      <div class="eyebrow">Cómo verificamos</div>
+      <h2>Una cifra cambia de valor cuando sabemos qué tan confirmada está.</h2>
+      <p>Por eso no mezclamos un cálculo preliminar con una cotización cerrada. Cada dato importante tiene un estado visible.</p>
     </div>
-    <div class="trust-grid">
-      <article class="trust-card fade">
-        <div class="trust-icon">$</div>
-        <h3>Precio entendible</h3>
-        <p>Buscamos costos completos e instalados cuando corresponde. Un “desde” no se presenta como precio final.</p>
+
+    <div class="status-grid">
+      <article class="status reveal"><span class="tag">Estimado</span><h3>Primera aproximación</h3><p>Sirve para saber si una idea es razonable. Todavía puede cambiar.</p></article>
+      <article class="status reveal"><span class="tag">Cotizado</span><h3>Proveedor respondió</h3><p>Existe un precio y un alcance, pero aún puede depender de condiciones del lugar.</p></article>
+      <article class="status reveal"><span class="tag">Validado</span><h3>Condiciones revisadas</h3><p>Se han comprobado los factores necesarios para afinar el costo o la decisión.</p></article>
+      <article class="status reveal"><span class="tag">Confirmado</span><h3>Listo para ejecutar</h3><p>Precio, alcance, condiciones y siguientes pasos están definidos documentalmente.</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Desde lo simple hasta lo integral</div>
+      <h2>No todos los clientes necesitan lo mismo.</h2>
+      <p>El alcance se adapta al problema. Esta es una parte importante de la propuesta: no convertir una venta sencilla en un proyecto innecesariamente complejo.</p>
+    </div>
+    <div class="case-grid">
+      <article class="case-card reveal">
+        <div class="eyebrow">Caso simple</div>
+        <h3>“Solo quiero vender mi propiedad.”</h3>
+        <p>El servicio se concentra en preparar, promocionar, filtrar, negociar y cerrar. No hay razón para añadir construcción o inversión si el cliente no lo necesita.</p>
+        <div class="flow"><span>Precio</span><span>Presentación</span><span>Interesados</span><span>Negociación</span><span>Cierre</span></div>
       </article>
-      <article class="trust-card fade">
-        <div class="trust-icon">✓</div>
-        <h3>Disponibilidad revisada</h3>
-        <p>Una alternativa no se considera finalista solo porque aparece publicada. Confirmamos lo importante antes de avanzar.</p>
-      </article>
-      <article class="trust-card fade">
-        <div class="trust-icon">i</div>
-        <h3>Información trazable</h3>
-        <p>Separamos lo declarado, lo verificado y lo pendiente para que sepas exactamente dónde estás parado.</p>
+      <article class="case-card complex reveal">
+        <div class="eyebrow">Caso integral</div>
+        <h3>“Quiero vender, cambiarme y que me quede capital.”</h3>
+        <p>Primero se modela cómo debería terminar la persona. Después se ordena venta, nueva vivienda, movilidad, reserva e inversión según corresponda.</p>
+        <div class="flow"><span>Venta</span><span>Destino</span><span>Vivienda</span><span>Movilidad</span><span>Reserva</span><span>Inversión</span></div>
       </article>
     </div>
   </div>
 </section>
 
 <section>
-  <div class="wrap tech">
-    <div class="tech-main fade">
-      <div class="eyebrow">La tecnología trabaja por detrás</div>
+  <div class="wrap technology">
+    <div class="tech-main reveal">
+      <div class="eyebrow">Tecnología invisible</div>
       <h2>Más capacidad de análisis. Menos carga para ti.</h2>
-      <p>Usamos datos, herramientas geoespaciales e inteligencia artificial para ordenar información y comparar más alternativas en menos tiempo. La decisión final sigue siendo humana.</p>
+      <p>Usamos datos, análisis territorial e inteligencia artificial para ordenar información, detectar faltantes y comparar alternativas. La tecnología trabaja por detrás; la decisión sigue siendo humana.</p>
     </div>
-    <div class="tech-side fade">
-      <div class="tech-item"><b>La IA ayuda a ordenar</b><span>Extrae, compara, resume y detecta información faltante. No decide qué debes comprar.</span></div>
-      <div class="tech-item"><b>El análisis territorial agrega contexto</b><span>Accesos, servicios, conectividad y características del entorno ayudan a entender mejor una ubicación.</span></div>
-      <div class="tech-item"><b>La base de proveedores reduce fricción</b><span>Precios, alcance, disponibilidad y desempeño se vuelven comparables con el tiempo.</span></div>
+    <div class="tech-list reveal">
+      <div class="tech-item"><b>IA para ordenar, no para decidir</b><span>Extrae, resume, compara y ayuda a detectar información faltante.</span></div>
+      <div class="tech-item"><b>Análisis territorial cuando aporta valor</b><span>Accesos, servicios, conectividad y entorno ayudan a entender mejor una ubicación.</span></div>
+      <div class="tech-item"><b>Historial de proveedores y alternativas</b><span>Con el tiempo, precios, disponibilidad y desempeño se vuelven más comparables.</span></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap folder-grid">
-    <div class="folder-art fade">
+    <div class="folder-art reveal" aria-hidden="true">
       <div class="sheet back"></div>
       <div class="sheet front">
         <div class="eyebrow">Tu carpeta</div>
@@ -462,16 +536,16 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
         <div class="sheet-bar"></div>
       </div>
     </div>
-    <div class="folder-copy fade">
+    <div class="folder-copy reveal">
       <div class="eyebrow">En papel o digital</div>
-      <h2>Información para mirar con calma.</h2>
-      <p>Porque no todos quieren abrir un dashboard. Puedes recibir una carpeta física bien diseñada y una versión digital sencilla.</p>
+      <h2>Información para mirar con calma y compartir.</h2>
+      <p>No todos quieren abrir un dashboard. Puedes recibir una carpeta física bien diseñada y una versión digital sencilla.</p>
       <ul>
-        <li>Tu situación actual y tu objetivo</li>
-        <li>Presupuesto y caja disponible</li>
-        <li>Alternativas finalistas</li>
-        <li>Fotos, mapas y documentos</li>
-        <li>Qué está confirmado y qué falta revisar</li>
+        <li>Tu situación actual y tu objetivo.</li>
+        <li>Presupuesto y capital disponible.</li>
+        <li>Alternativas finalistas.</li>
+        <li>Fotos, mapas y documentos relevantes.</li>
+        <li>Qué está confirmado y qué falta revisar.</li>
       </ul>
     </div>
   </div>
@@ -479,10 +553,10 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
 
 <section class="cta" id="contacto">
   <div class="wrap">
-    <div class="cta-box fade">
+    <div class="cta-box reveal">
       <div>
-        <h2>Dinos dónde estás hoy y dónde quieres llegar.</h2>
-        <p>Puede ser una venta simple o una transición completa. Partimos por entender tu caso y decirte con claridad qué podemos resolver.</p>
+        <h2>Dinos qué quieres resolver.</h2>
+        <p>Puede ser solo vender. O puede ser una transición completa. Partimos por entender tu caso y decirte con claridad qué podemos coordinar.</p>
       </div>
       <a class="btn" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">Cuéntanos tu caso →</a>
     </div>
@@ -500,8 +574,39 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
 <a class="mobile-cta" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">Cuéntanos tu caso →</a>
 
 <script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.08});
-document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+const tabs=[...document.querySelectorAll('.route-btn')];
+const panels=[...document.querySelectorAll('.route-panel')];
+function activateRoute(key, focus=false){
+  tabs.forEach(btn=>{
+    const on=btn.dataset.target===key;
+    btn.setAttribute('aria-selected',on?'true':'false');
+    if(on&&focus)btn.focus();
+  });
+  panels.forEach(panel=>{
+    const on=panel.id==='panel-'+key;
+    panel.classList.toggle('active',on);
+    panel.hidden=!on;
+  });
+}
+tabs.forEach((btn,index)=>{
+  btn.addEventListener('click',()=>activateRoute(btn.dataset.target));
+  btn.addEventListener('keydown',e=>{
+    if(!['ArrowRight','ArrowLeft','ArrowDown','ArrowUp'].includes(e.key))return;
+    e.preventDefault();
+    const dir=(e.key==='ArrowRight'||e.key==='ArrowDown')?1:-1;
+    const next=(index+dir+tabs.length)%tabs.length;
+    activateRoute(tabs[next].dataset.target,true);
+  });
+});
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduced){
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('on'));
+}else{
+  const io=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('on');io.unobserve(entry.target)}
+  }),{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+}
 </script>
 </body>
 </html>
