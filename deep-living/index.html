@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Deep Living — Si vas a mover tu patrimonio, no improvises</title>
-<meta name="description" content="Un servicio premium para vender, cambiarte, construir o invertir con especialistas, análisis de datos, criterio y una sola coordinación.">
+<title>Deep Living — Te ayudamos a ordenar una decisión importante</title>
+<meta name="description" content="Te ayudamos a vender, cambiarte, construir o invertir con números claros, especialistas cuando hacen falta y una sola coordinación.">
 <meta name="theme-color" content="#F5F0E7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -223,7 +223,7 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
   .nav{height:66px}.brand{font-size:20px}.nav>.btn{display:none}
   body{padding-bottom:72px}
   .hero{padding-top:42px}
-  .hero h1{font-size:52px}
+  .hero h1{font-size:46px;line-height:.96}
   .hero .lead{font-size:18px}
   .hero-visual{min-height:400px}
   .hero-question{width:235px;padding:15px}
@@ -238,7 +238,7 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
   .folder-art{min-height:360px}
   .sheet.back,.sheet.front{width:76%}
   .footer{display:block}.footer div+div{margin-top:7px}
-  .mobile-cta{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:110;height:52px;background:var(--accent);color:white;border-radius:999px;align-items:center;justify-content:center;font-weight:800;box-shadow:0 12px 35px rgba(214,90,49,.3)}
+  .mobile-cta{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:110;height:52px;background:var(--accent);color:white;border-radius:999px;align-items:center;justify-content:center;font-weight:800;box-shadow:0 12px 35px rgba(214,90,49,.3);transition:opacity .2s ease,transform .2s ease}.mobile-cta.hidden{opacity:0;transform:translateY(75px);pointer-events:none}
 }
 </style>
 </head>
@@ -255,7 +255,7 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
       <a href="#proceso">Cómo lo hacemos</a>
       <a href="#honorarios">Honorarios</a>
     </nav>
-    <a class="btn btn-primary" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">
+    <a class="btn btn-primary" id="hero-contact" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">
       Cuéntanos tu caso
       <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
@@ -266,9 +266,9 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
 <section class="hero" id="inicio">
   <div class="wrap hero-grid">
     <div class="reveal">
-      <div class="eyebrow">Servicio premium para decisiones inmobiliarias y patrimoniales</div>
-      <h1>Si vas a mover una parte importante de tu patrimonio, <span class="accent">no improvises.</span></h1>
-      <p class="lead">Vender, cambiarte, construir o invertir conecta precios, documentos, proveedores, plazos y decisiones que afectan tu dinero y tu tranquilidad. <strong>Deep Living reúne especialistas, análisis de datos y una sola coordinación para que sepas qué hacer, cuánto cuesta y qué viene después.</strong></p>
+      <div class="eyebrow">Vender · cambiarte · construir · invertir</div>
+      <h1>Antes de dar el paso, <span class="accent">hagamos bien las cuentas.</span></h1>
+      <p class="lead">Primero vemos <strong>cuánto tienes, cuánto puedes gastar y qué quieres lograr.</strong> Después buscamos opciones y coordinamos a las personas que hagan falta. Tú decides; nosotros te ayudamos a que todo quede claro.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">
           Cuéntanos tu caso
@@ -277,9 +277,9 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
         <a class="btn btn-secondary" href="#problemas">Ver cómo lo resolvemos</a>
       </div>
       <div class="hero-proof">
-        <div class="proof"><i>✓</i> Especialistas según tu caso</div>
-        <div class="proof"><i>✓</i> Datos antes de decidir</div>
-        <div class="proof"><i>✓</i> Un solo punto de coordinación</div>
+        <div class="proof"><i>✓</i> Personas que saben de cada tema</div>
+        <div class="proof"><i>✓</i> Números claros</div>
+        <div class="proof"><i>✓</i> Una sola coordinación</div>
       </div>
     </div>
 
@@ -289,13 +289,13 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
       </div>
       <div class="hero-tag">Maule · Chile</div>
       <div class="hero-question">
-        <small>Antes de avanzar, respondemos esto</small>
-        <strong>¿Cómo quieres terminar esta historia?</strong>
+        <small>Antes de mover un peso</small>
+        <strong>Queremos que tengas claro esto:</strong>
         <ul>
-          <li>Cuánto capital quedará realmente.</li>
-          <li>Qué opción encaja contigo.</li>
-          <li>Qué está confirmado y qué falta revisar.</li>
-          <li>Quién debe hacerse cargo de cada etapa.</li>
+          <li>Cuánto entra y cuánto sale.</li>
+          <li>Qué opciones son realmente posibles.</li>
+          <li>Qué falta confirmar.</li>
+          <li>Quién se hace cargo de cada cosa.</li>
         </ul>
       </div>
     </div>
@@ -304,19 +304,19 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
 
 <div class="signal" aria-label="Qué respalda el servicio">
   <div class="wrap signal-grid">
-    <div class="signal-item"><b>Equipo humano</b><span>Especialistas según lo que tu caso necesita.</span></div>
-    <div class="signal-item"><b>Análisis de datos</b><span>Precios, costos, zonas y escenarios comparados.</span></div>
-    <div class="signal-item"><b>Criterio y regulación</b><span>Documentos, permisos y requisitos con quien corresponde.</span></div>
-    <div class="signal-item"><b>Coordinación completa</b><span>No tienes que juntar todas las piezas tú.</span></div>
+    <div class="signal-item"><b>Personas que saben</b><span>Sumamos al especialista que corresponde cuando hace falta.</span></div>
+    <div class="signal-item"><b>Números claros</b><span>Comparamos precios, costos y escenarios antes de avanzar.</span></div>
+    <div class="signal-item"><b>Papeles en orden</b><span>Revisamos qué documentos, permisos o profesionales se necesitan.</span></div>
+    <div class="signal-item"><b>Un solo camino</b><span>Tú no tienes que juntar todas las piezas.</span></div>
   </div>
 </div>
 
 <section id="problemas">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">El problema que duele</div>
-      <h2>Hay decisiones que parecen simples… hasta que empiezan a aparecer los detalles.</h2>
-      <p>Ahí es donde entramos nosotros. No para darte más cosas que hacer, sino para quitarte carga y evitar que una decisión importante se apoye en información a medias.</p>
+      <div class="eyebrow">¿Qué necesitas resolver?</div>
+      <h2>Cuéntanos dónde estás hoy y qué quieres conseguir.</h2>
+      <p>Puede ser solo vender. Puede ser construir en tu parcela. O puede ser cambiar de vivienda sin quedarte corto de dinero. Partimos por entender tu caso y después ordenamos lo demás.</p>
     </div>
 
     <div class="pain-grid">
@@ -327,9 +327,9 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
           </div>
           <div class="pain-num">01 · VENDER</div>
         </div>
-        <h3>“No quiero regalar mi propiedad ni perder meses tratando de venderla.”</h3>
-        <p class="pain">El precio, la presentación, los interesados, la negociación y los documentos pueden convertir una venta en un proceso agotador.</p>
-        <div class="solve"><small>Qué hacemos</small><p>Definimos estrategia, preparamos la propiedad, filtramos interesados y acompañamos la operación hasta el cierre.</p></div>
+        <h3>“Quiero vender bien y no pasar meses persiguiendo interesados.”</h3>
+        <p class="pain">Nos encargamos de que el precio, la presentación, las visitas y la negociación tengan un orden.</p>
+        <div class="solve"><small>Qué hacemos</small><p>Preparamos la venta, filtramos a los interesados y te acompañamos hasta que la operación quede cerrada.</p></div>
       </article>
 
       <article class="pain-card reveal">
@@ -339,9 +339,9 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
           </div>
           <div class="pain-num">02 · CAMBIARTE</div>
         </div>
-        <h3>“No quiero vender primero y después descubrir que el resto no alcanza.”</h3>
-        <p class="pain">Cambiar de vivienda conecta venta, nueva casa, gastos, tiempos, movilidad, reserva y a veces inversión.</p>
-        <div class="solve"><small>Qué hacemos</small><p>Modelamos el destino antes de mover tu capital y te mostramos cuánto entra, cuánto sale y cuánto te queda.</p></div>
+        <h3>“Quiero vender y cambiarme, pero primero necesito saber si los números me dan.”</h3>
+        <p class="pain">Antes de vender, vemos cuánto dinero quedaría y qué alternativas caben de verdad en tu presupuesto.</p>
+        <div class="solve"><small>Qué hacemos</small><p>Te mostramos cuánto entra, cuánto sale y cuánto te queda antes de tomar una decisión.</p></div>
       </article>
 
       <article class="pain-card reveal">
@@ -351,9 +351,9 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
           </div>
           <div class="pain-num">03 · CONSTRUIR</div>
         </div>
-        <h3>“No quiero una casa ‘desde…’ que después termine costando el doble.”</h3>
-        <p class="pain">Fundaciones, transporte, agua, sanitaria, electricidad, acceso, terminaciones y permisos cambian el costo real.</p>
-        <div class="solve"><small>Qué hacemos</small><p>Ordenamos la solución completa y diferenciamos claramente qué está incluido, qué falta y qué puede cambiar.</p></div>
+        <h3>“Ya tengo parcela. Quiero saber cuánto cuesta dejar una casa realmente lista para vivir.”</h3>
+        <p class="pain">Una casa no es solo el kit: también hay terreno, fundaciones, agua, electricidad, sanitaria, acceso y terminaciones.</p>
+        <div class="solve"><small>Qué hacemos</small><p>Juntamos esos costos en una sola mirada para que sepas qué incluye el presupuesto y qué falta.</p></div>
       </article>
 
       <article class="pain-card reveal">
@@ -363,9 +363,9 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
           </div>
           <div class="pain-num">04 · INVERTIR</div>
         </div>
-        <h3>“No quiero comprar algo solo porque parece una oportunidad.”</h3>
-        <p class="pain">Una propiedad puede verse atractiva y aun así no encajar con tu objetivo, tus plazos o tu tolerancia al riesgo.</p>
-        <div class="solve"><small>Qué hacemos</small><p>Comparamos alternativas con la misma estructura y ponemos hechos, costos y supuestos sobre la mesa antes de decidir.</p></div>
+        <h3>“Tengo dinero para invertir, pero quiero entender bien dónde lo estoy poniendo.”</h3>
+        <p class="pain">Comparamos alternativas para que no tengas que decidir solo porque una propiedad se ve atractiva.</p>
+        <div class="solve"><small>Qué hacemos</small><p>Ponemos precio, costos, ubicación, documentos y supuestos sobre la mesa para que puedas comparar con calma.</p></div>
       </article>
     </div>
   </div>
@@ -375,9 +375,9 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
   <div class="wrap team-grid">
     <div class="reveal">
       <div class="eyebrow" style="color:#F1D2C3">Quién te acompaña</div>
-      <h2>No pretendemos que una sola persona sepa de todo.</h2>
-      <p class="intro">Una decisión bien resuelta puede necesitar mirada inmobiliaria, técnica, territorial, constructiva, documental o legal. <strong>Deep Living coordina una red de profesionales y proveedores especializados según lo que tu caso realmente exige.</strong></p>
-      <div class="team-note">Tú no recibes opiniones sueltas. Recibes una sola ruta de trabajo, responsables claros y la información ordenada para decidir.</div>
+      <h2>Cuando hace falta alguien que sabe de un tema, lo sumamos.</h2>
+      <p class="intro">No esperamos que tú sepas de venta, construcción, terrenos, permisos y documentos. <strong>Nosotros coordinamos a las personas que hacen falta para cada parte del proceso.</strong></p>
+      <div class="team-note">La idea es simple: tú hablas con nosotros y nosotros te ayudamos a ordenar el resto. Sin mandarte de un lado para otro.</div>
     </div>
 
     <div class="expert-grid reveal">
@@ -412,9 +412,9 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
 <section id="proceso">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">Cómo lo resolvemos</div>
-      <h2>Primero entendemos cómo quieres terminar. Después buscamos.</h2>
-      <p>No empezamos mostrándote propiedades ni proveedores. Primero ordenamos tu objetivo, tus números y las condiciones que realmente importan.</p>
+      <div class="eyebrow">Cómo trabajamos</div>
+      <h2>Primero hablamos. Después hacemos las cuentas. Y recién ahí buscamos.</h2>
+      <p>Así evitamos mostrarte cosas bonitas que no sirven para tu caso o que después terminan costando mucho más.</p>
     </div>
 
     <div class="process-grid">
@@ -449,10 +449,10 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
 <section class="data">
   <div class="wrap data-grid">
     <div class="data-copy reveal">
-      <div class="eyebrow">Datos con criterio</div>
-      <h2>No decidimos solo por intuición. Tampoco dejamos que los datos decidan solos.</h2>
-      <p>Usamos análisis de datos para comparar mejor y hacer preguntas más inteligentes. Después entra el criterio humano: contexto, experiencia, regulación y lo que realmente importa para tu vida.</p>
-      <div class="data-note"><strong>La tecnología trabaja por detrás.</strong> No necesitas comprar “IA”. Necesitas claridad, criterio y una decisión bien sustentada.</div>
+      <div class="eyebrow">Datos para entender mejor</div>
+      <h2>Los datos ayudan a ver mejor. El criterio ayuda a decidir.</h2>
+      <p>Comparamos precios, costos, ubicaciones y alternativas para darte una base más clara. Después miramos el contexto, los documentos y lo que realmente importa para ti.</p>
+      <div class="data-note"><strong>La tecnología trabaja por detrás.</strong> Lo importante para ti es recibir información clara y una recomendación bien explicada.</div>
     </div>
     <div class="data-cards reveal">
       <div class="data-card"><b>Precio y comparables</b><span>Qué se está pidiendo, qué es comparable y dónde hay diferencias importantes.</span></div>
@@ -466,9 +466,9 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
 <section id="confianza">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">Cómo cuidamos la confianza</div>
-      <h2>Te decimos qué sabemos. Y también qué todavía no sabemos.</h2>
-      <p>Una estimación, una cotización y una condición confirmada no valen lo mismo. Por eso las separamos.</p>
+      <div class="eyebrow">Sin letra chica innecesaria</div>
+      <h2>Si algo todavía no está confirmado, te lo decimos.</h2>
+      <p>No mezclamos una idea aproximada con un precio real. Queremos que siempre sepas qué está estimado, qué ya fue cotizado y qué está listo para avanzar.</p>
     </div>
     <div class="certainty-grid">
       <article class="certainty reveal"><span class="tag">Estimado</span><h3>Primera aproximación</h3><p>Sirve para saber si una idea tiene sentido. Aún puede cambiar.</p></article>
@@ -492,8 +492,8 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
     </div>
     <div class="receive-copy reveal">
       <div class="eyebrow">Qué recibes</div>
-      <h2>Información para decidir con calma. No cien enlaces para que tú hagas el trabajo.</h2>
-      <p>Tu caso se presenta de manera clara, visual y fácil de compartir con tu familia.</p>
+      <h2>Te entregamos lo que necesitas para decidir, no más trabajo.</h2>
+      <p>Todo queda resumido de forma clara para que puedas revisarlo tranquilo y conversarlo con tu familia.</p>
       <div class="receive-list">
         <div class="receive-item"><div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><div><b>Plan de ruta</b><span>Qué hacemos primero, qué depende de qué y qué decisión viene después.</span></div></div>
         <div class="receive-item"><div class="icon-box"><svg class="icon" viewBox="0 0 24 24"><path d="M4 19V9"/><path d="M10 19V5"/><path d="M16 19v-7"/><path d="M22 19H2"/></svg></div><div><b>Presupuesto maestro</b><span>Qué entra, qué sale, qué sigue estimado y cuánto capital queda.</span></div></div>
@@ -507,9 +507,9 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
 <section class="pricing" id="honorarios">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">Honorarios claros</div>
-      <h2>Si hablamos de claridad, también tenemos que hablar del precio.</h2>
-      <p>Esta es nuestra estructura comercial inicial. Antes de contratar, dejamos por escrito el alcance, los honorarios y cualquier servicio de terceros.</p>
+      <div class="eyebrow">Cuánto cuesta</div>
+      <h2>Antes de empezar, sabes cuánto cobramos y qué incluye.</h2>
+      <p>No queremos que el precio sea una sorpresa. Dejamos por escrito el alcance, nuestros honorarios y cualquier servicio externo antes de avanzar.</p>
     </div>
 
     <div class="pricing-grid">
@@ -559,8 +559,8 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
   <div class="wrap">
     <div class="cta-box reveal">
       <div>
-        <h2>Cuéntanos qué quieres lograr. No necesitas llegar con el plan resuelto.</h2>
-        <p>Para eso estamos nosotros. La primera conversación sirve para entender tu situación y decirte, con claridad, cómo podemos ayudarte.</p>
+        <h2>Cuéntanos qué estás pensando. Lo ordenamos contigo.</h2>
+        <p>No necesitas saber exactamente qué hacer. La primera conversación es para entender tu situación, revisar si podemos ayudarte y explicarte el siguiente paso con palabras simples.</p>
       </div>
       <a class="btn" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">
         Hablemos
@@ -578,7 +578,7 @@ footer{padding:30px 0 44px;border-top:1px solid var(--line)}
   </div>
 </footer>
 
-<a class="mobile-cta" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">Cuéntanos tu caso →</a>
+<a class="mobile-cta hidden" id="mobile-cta" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">Cuéntanos tu caso →</a>
 
 <script>
 const progress=document.getElementById('progress');
@@ -589,6 +589,19 @@ function updateProgress(){
 }
 document.addEventListener('scroll',updateProgress,{passive:true});
 updateProgress();
+
+const mobileCta=document.getElementById('mobile-cta');
+const heroContact=document.getElementById('hero-contact');
+const finalCta=document.querySelector('.cta-box');
+let heroVisible=true, finalVisible=false;
+function syncMobileCta(){ mobileCta.classList.toggle('hidden', heroVisible || finalVisible); }
+if(heroContact){
+  new IntersectionObserver(([entry])=>{heroVisible=entry.isIntersecting;syncMobileCta();},{threshold:.2}).observe(heroContact);
+}
+if(finalCta){
+  new IntersectionObserver(([entry])=>{finalVisible=entry.isIntersecting;syncMobileCta();},{threshold:.15}).observe(finalCta);
+}
+syncMobileCta();
 
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(reduced){
