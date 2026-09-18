@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Deep Living — Vender, cambiarte, construir o invertir sin coordinarlo todo tú</title>
-<meta name="description" content="Deep Living ordena ventas, cambios de vivienda, construcción en parcela e inversión para que tomes pocas decisiones con información clara y un solo equipo coordinando el proceso.">
+<title>Deep Living — Decisiones importantes, bien acompañadas</title>
+<meta name="description" content="Un servicio inmobiliario y patrimonial premium: especialistas, análisis de datos y una sola coordinación para vender, cambiarte, construir o invertir con claridad.">
 <meta name="theme-color" content="#F4F0E7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,6 +152,31 @@ section{padding:80px 0}
 .flow{display:flex;gap:7px;flex-wrap:wrap}
 .flow span{padding:8px 10px;border-radius:999px;background:#EFEAE1;font-size:11px;font-weight:700}
 .case-card.complex .flow span{background:rgba(255,255,255,.1)}
+.pricing{background:var(--paper-2)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.price-card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:25px;display:flex;flex-direction:column;min-height:330px}
+.price-card.featured{background:var(--ink);color:white;border-color:var(--ink)}
+.price-card .price-label{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--clay)}
+.price-card.featured .price-label{color:#E7D8C4}
+.price-card h3{font-size:31px;line-height:1;margin:14px 0 10px}
+.price-card .price{font-family:var(--serif);font-size:36px;line-height:1;margin:4px 0 14px}
+.price-card p{font-size:14px;color:var(--muted);margin:0 0 17px}
+.price-card.featured p{color:#D5DDD8}
+.price-list{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.price-list li{display:flex;gap:9px;font-size:13px}
+.price-list .mini-check{width:18px;height:18px;display:grid;place-items:center;border-radius:50%;background:#E1E8E0;color:var(--ok);font-size:9px;font-weight:900;flex:0 0 18px}
+.price-card.featured .mini-check{background:rgba(255,255,255,.13);color:white}
+.price-foot{margin-top:auto;padding-top:18px;font-size:11px;color:#7A847E}
+.price-card.featured .price-foot{color:#BBC6BF}
+.team{display:grid;grid-template-columns:1.02fr .98fr;gap:16px}
+.team-main{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:30px}
+.team-main h2{font-size:clamp(40px,4.8vw,58px);line-height:.98;margin:9px 0 13px}
+.team-main p{font-size:17px;color:var(--muted);margin:0}
+.team-note{margin-top:20px;padding:14px 15px;background:#EFEAE1;border-radius:14px;font-size:13px;color:#5D6761}
+.team-list{display:grid;gap:11px}
+.team-item{background:rgba(255,253,248,.65);border:1px solid var(--line);border-radius:17px;padding:19px}
+.team-item b{display:block;margin-bottom:4px}
+.team-item span{font-size:13px;color:var(--muted)}
 .technology{display:grid;grid-template-columns:1.05fr .95fr;gap:16px}
 .tech-main{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:30px}
 .tech-main h2{font-size:clamp(40px,4.8vw,58px);line-height:.98;margin:9px 0 13px}
@@ -190,7 +215,7 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
 }
 @media(max-width:1020px){
   .navlinks{display:none}
-  .hero-grid,.dark-grid,.receive-grid,.technology,.folder-grid{grid-template-columns:1fr}
+  .hero-grid,.dark-grid,.receive-grid,.technology,.team,.folder-grid{grid-template-columns:1fr}
   .hero-media{min-height:500px}
   .hero-photo{inset:0;border-radius:84px 22px 22px 22px}
   .hero-card{left:18px}
@@ -198,7 +223,7 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
   .selector-nav{grid-template-columns:repeat(4,1fr)}
   .route-btn{padding:13px}
   .route-btn small{display:none}
-  .process{grid-template-columns:1fr 1fr}
+  .process,.pricing-grid{grid-template-columns:1fr 1fr}
   .trust-strip-grid{grid-template-columns:1fr 1fr}
   .trust-mini:nth-child(2){border-right:0}
   .trust-mini:nth-child(-n+2){border-bottom:1px solid var(--line)}
@@ -223,7 +248,7 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
   .route-media{min-height:260px;order:-1}
   .route-copy{padding:24px}
   .route-copy h3{font-size:38px}
-  .you-us,.process,.receive-items,.status-grid,.case-grid{grid-template-columns:1fr}
+  .you-us,.process,.receive-items,.status-grid,.case-grid,.pricing-grid{grid-template-columns:1fr}
   .process-card{min-height:245px}
   .case-card,.tech-main,.cta-box{padding:25px}
   .folder-art{min-height:355px}
@@ -243,7 +268,7 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
       <a href="#resolver">Qué resolvemos</a>
       <a href="#como">Cómo lo hacemos</a>
       <a href="#recibes">Qué recibes</a>
-      <a href="#confianza">Cómo verificamos</a>
+      <a href="#equipo">Quién te acompaña</a><a href="#honorarios">Honorarios</a>
     </nav>
     <a class="btn btn-primary" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">Cuéntanos tu caso →</a>
   </div>
@@ -253,17 +278,17 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
 <section class="hero" id="inicio">
   <div class="wrap hero-grid">
     <div class="reveal">
-      <div class="eyebrow">Venta · cambio de vivienda · casa en parcela · inversión</div>
-      <h1>Resuelve tu próxima etapa sin coordinarlo todo tú.</h1>
-      <p class="lead">Si quieres vender, cambiarte, construir o invertir, <strong>ordenamos las opciones, los números y los próximos pasos para que tú tomes pocas decisiones con información clara.</strong></p>
+      <div class="eyebrow">Servicio inmobiliario y patrimonial personalizado</div>
+      <h1>Las decisiones importantes se toman mejor cuando no estás solo.</h1>
+      <p class="lead">Si vas a vender, cambiarte, construir o invertir, <strong>ponemos alrededor de tu caso a las personas, los datos y el criterio que hacen falta para que llegues bien al resultado.</strong></p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">Cuéntanos qué necesitas →</a>
         <a class="btn btn-ghost" href="#resolver">Ver qué problemas resolvemos</a>
       </div>
       <div class="proof-row">
-        <div class="proof-item"><span class="check">✓</span>Pocas opciones, bien filtradas</div>
-        <div class="proof-item"><span class="check">✓</span>Números antes de decidir</div>
-        <div class="proof-item"><span class="check">✓</span>Un punto de coordinación</div>
+        <div class="proof-item"><span class="check">✓</span>Especialistas según tu caso</div>
+        <div class="proof-item"><span class="check">✓</span>Análisis de datos y territorio</div>
+        <div class="proof-item"><span class="check">✓</span>Una sola coordinación</div>
       </div>
     </div>
 
@@ -272,9 +297,9 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
         <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90" alt="Casa contemporánea rodeada de naturaleza">
       </div>
       <div class="hero-card">
-        <small>La idea</small>
-        <strong>Tu caso puede tener veinte piezas. Tú sigues viendo un solo plan.</strong>
-        <p>La complejidad queda de nuestro lado.</p>
+        <small>Nuestra forma de trabajar</small>
+        <strong>Te explicamos las cosas como nos gustaría que nos las explicaran a nosotros.</strong>
+        <p>Claro, directo y sin venderte algo que no necesitas.</p>
       </div>
       <div class="location">Maule · Chile</div>
     </div>
@@ -283,10 +308,10 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
 
 <div class="trust-strip" aria-label="Principios del servicio">
   <div class="wrap trust-strip-grid">
-    <div class="trust-mini"><b>Un solo punto de contacto</b><span>No tienes que perseguir a cada proveedor.</span></div>
-    <div class="trust-mini"><b>Pocas alternativas</b><span>No te entregamos cien enlaces para que tú filtres.</span></div>
-    <div class="trust-mini"><b>Costos explicados</b><span>Separamos lo estimado de lo realmente cotizado.</span></div>
-    <div class="trust-mini"><b>Decisión final tuya</b><span>La tecnología ayuda; no decide por ti.</span></div>
+    <div class="trust-mini"><b>Equipo humano</b><span>Incorporamos especialistas según lo que tu caso necesita.</span></div>
+    <div class="trust-mini"><b>Análisis de datos</b><span>Precios, costos, ubicaciones y escenarios comparados.</span></div>
+    <div class="trust-mini"><b>Criterio y regulación</b><span>Documentos, permisos y requisitos se revisan con quien corresponde.</span></div>
+    <div class="trust-mini"><b>Una sola coordinación</b><span>Tú no tienes que juntar todas las piezas.</span></div>
   </div>
 </div>
 
@@ -388,9 +413,9 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
 <section class="dark">
   <div class="wrap dark-grid">
     <div class="reveal">
-      <div class="eyebrow" style="color:#E3D7C4">La experiencia</div>
-      <h2>Tú decides lo importante. Nosotros hacemos el trabajo pesado.</h2>
-      <p>Una buena experiencia no significa mostrarte más información. Significa quitarte trabajo sin quitarte control.</p>
+      <div class="eyebrow" style="color:#E3D7C4">Servicio premium, de verdad</div>
+      <h2>No se trata de hacer más cosas. Se trata de cuidar mejor cada decisión.</h2>
+      <p>Queremos que sientas que hay alguien pensando contigo, haciendo las preguntas incómodas antes de tiempo y cuidando que una buena idea no se arruine por un detalle que nadie revisó.</p>
     </div>
 
     <div class="you-us reveal">
@@ -510,17 +535,69 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
   </div>
 </section>
 
-<section>
-  <div class="wrap technology">
-    <div class="tech-main reveal">
-      <div class="eyebrow">Tecnología invisible</div>
-      <h2>Más capacidad de análisis. Menos carga para ti.</h2>
-      <p>Usamos datos, análisis territorial e inteligencia artificial para ordenar información, detectar faltantes y comparar alternativas. La tecnología trabaja por detrás; la decisión sigue siendo humana.</p>
+<section id="equipo">
+  <div class="wrap team">
+    <div class="team-main reveal">
+      <div class="eyebrow">Quién está detrás de tu caso</div>
+      <h2>No pretendemos que una sola persona sepa de todo.</h2>
+      <p>Una buena decisión puede necesitar mirada inmobiliaria, territorial, técnica, constructiva, documental o legal. Deep Living coordina una red de profesionales y proveedores especializados según las necesidades reales de cada proyecto.</p>
+      <div class="team-note"><strong>Lo importante:</strong> tú no recibes opiniones sueltas. Recibes una sola ruta de trabajo, con responsables claros y la información ordenada para decidir.</div>
     </div>
-    <div class="tech-list reveal">
-      <div class="tech-item"><b>IA para ordenar, no para decidir</b><span>Extrae, resume, compara y ayuda a detectar información faltante.</span></div>
-      <div class="tech-item"><b>Análisis territorial cuando aporta valor</b><span>Accesos, servicios, conectividad y entorno ayudan a entender mejor una ubicación.</span></div>
-      <div class="tech-item"><b>Historial de proveedores y alternativas</b><span>Con el tiempo, precios, disponibilidad y desempeño se vuelven más comparables.</span></div>
+    <div class="team-list reveal">
+      <div class="team-item"><b>Criterio humano especializado</b><span>Valoración, corretaje, construcción, arquitectura, territorio, instalaciones y otras áreas cuando el caso lo requiere.</span></div>
+      <div class="team-item"><b>Análisis de datos</b><span>Comparamos precios, costos, disponibilidad, ubicación y escenarios para no decidir solo por intuición.</span></div>
+      <div class="team-item"><b>Normas, documentos y permisos</b><span>Cuando una etapa exige revisión profesional específica, incorporamos al especialista habilitado que corresponda.</span></div>
+      <div class="team-item"><b>Herramientas por detrás</b><span>Usamos tecnología y automatización para trabajar mejor. No necesitas comprar “IA”; necesitas criterio, claridad y ejecución.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="honorarios">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Honorarios</div>
+      <h2>También queremos que sepas cuánto cuesta trabajar con nosotros.</h2>
+      <p>Un servicio premium no debería esconder sus honorarios. Esta es nuestra propuesta inicial: simple, visible y acordada antes de empezar.</p>
+    </div>
+    <div class="pricing-grid">
+      <article class="price-card reveal">
+        <div class="price-label">Primera conversación</div>
+        <h3>Entender tu caso</h3>
+        <div class="price">Sin costo</div>
+        <p>Nos cuentas qué tienes hoy, qué te preocupa y qué quieres conseguir. Si no somos la solución adecuada, también te lo diremos.</p>
+        <ul class="price-list">
+          <li><span class="mini-check">✓</span><span>Revisión inicial del objetivo</span></li>
+          <li><span class="mini-check">✓</span><span>Alcance que realmente necesitas</span></li>
+          <li><span class="mini-check">✓</span><span>Siguiente paso claro</span></li>
+        </ul>
+        <div class="price-foot">Sin obligación de contratar.</div>
+      </article>
+
+      <article class="price-card featured reveal">
+        <div class="price-label">Venta profesional</div>
+        <h3>Vender tu propiedad</h3>
+        <div class="price">2% + IVA</div>
+        <p>Sobre el precio final de venta. Nuestro honorario principal se paga cuando la operación se concreta.</p>
+        <ul class="price-list">
+          <li><span class="mini-check">✓</span><span>Estrategia y presentación</span></li>
+          <li><span class="mini-check">✓</span><span>Difusión y filtro de interesados</span></li>
+          <li><span class="mini-check">✓</span><span>Visitas, negociación y coordinación de cierre</span></li>
+        </ul>
+        <div class="price-foot">Honorario mínimo sugerido: $1.500.000 + IVA.</div>
+      </article>
+
+      <article class="price-card reveal">
+        <div class="price-label">Plan Nueva Etapa</div>
+        <h3>Cuando tu caso tiene varias piezas</h3>
+        <div class="price">$1.490.000 + IVA</div>
+        <p>Plan base de análisis y coordinación para ordenar una transición antes de mover tu capital.</p>
+        <ul class="price-list">
+          <li><span class="mini-check">✓</span><span>Escenarios y presupuesto maestro</span></li>
+          <li><span class="mini-check">✓</span><span>Opciones finalistas y ruta de decisión</span></li>
+          <li><span class="mini-check">✓</span><span>Coordinación inicial de especialistas</span></li>
+        </ul>
+        <div class="price-foot">La ejecución posterior y servicios de terceros se cotizan aparte, por escrito, antes de contratar.</div>
+      </article>
     </div>
   </div>
 </section>
@@ -555,8 +632,8 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
   <div class="wrap">
     <div class="cta-box reveal">
       <div>
-        <h2>Dinos qué quieres resolver.</h2>
-        <p>Puede ser solo vender. O puede ser una transición completa. Partimos por entender tu caso y decirte con claridad qué podemos coordinar.</p>
+        <h2>Cuéntanos qué quieres lograr. Empezamos por ahí.</h2>
+        <p>No hace falta que llegues con el plan resuelto. Para eso estamos nosotros. La primera conversación sirve para entender tu situación y decirte, con claridad, cómo podríamos ayudarte.</p>
       </div>
       <a class="btn" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20contar%20mi%20caso">Cuéntanos tu caso →</a>
     </div>
@@ -566,7 +643,7 @@ footer{padding:30px 0 42px;border-top:1px solid var(--line)}
 
 <footer>
   <div class="wrap footer">
-    <div><strong style="color:var(--ink)">Deep Living</strong> · Vivienda, propiedad e inversión con un proceso claro.</div>
+    <div><strong style="color:var(--ink)">Deep Living</strong> · Personas, datos y especialistas para decisiones importantes.</div>
     <div>contacto@deepanalytica.cl</div>
   </div>
 </footer>
