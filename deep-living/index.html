@@ -31,7 +31,7 @@ h1,h2,h3{margin:0;letter-spacing:-.048em}.serif{font-family:var(--serif);font-we
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.node{position:relative;background:#FAFBFC;border:1px solid #E5E9EF;border-radius:13px;padding:12px;min-height:116px}.node:not(:last-child):after{content:"→";position:absolute;right:-9px;top:44px;color:#AAB4C2;font-weight:800}.node .ico{width:31px;height:31px;border-radius:10px;display:grid;place-items:center;background:#F1F3F6;color:var(--blue);margin-bottom:9px}.node:nth-child(4) .ico{background:#F2FAD9;color:#5B7A19}.node b{display:block;font-size:10px;margin-bottom:3px}.node span{font-size:8px;color:var(--muted);line-height:1.35}.rule{margin-top:11px;background:#F8FAFC;border:1px solid #E5EAF0;border-left:4px solid var(--lime);border-radius:12px;padding:11px;font-size:10px;color:#526071}
 .icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}.quick{background:#fff;border:1px solid #E7EBF1;border-radius:15px;padding:14px}.quick b{display:block;font-size:11px;margin-bottom:3px}.quick span{font-size:9px;color:var(--muted)}
-section.screen{padding:70px 0}.section-grid{display:grid;grid-template-columns:.84fr 1.16fr;gap:28px;align-items:center}.copy h2{font-size:clamp(39px,4.7vw,57px);line-height:.98;font-weight:800;margin:11px 0}.copy p{font-size:17px;color:#5B6778;margin:0}.soft{background:linear-gradient(180deg,#F8FAFC,#FCFCFA)}
+section.screen{padding:70px 0}.section-grid{display:grid;grid-template-columns:.84fr 1.16fr;gap:28px;align-items:center}.copy h2{font-size:clamp(38px,4.7vw,56px);line-height:.99;font-weight:800;margin:11px 0}.copy p{font-size:16px;color:#5B6778;margin:0;max-width:720px}.soft{background:linear-gradient(180deg,#F8FAFC,#FCFCFA)}
 .stack{display:grid;gap:9px}.step{display:grid;grid-template-columns:40px 1fr;gap:11px;align-items:start;background:#FAFBFC;border:1px solid #E5E9EF;border-radius:14px;padding:12px}.num{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;font-size:11px;font-weight:800}.step:last-child .num{background:var(--lime);color:var(--navy)}.step b{display:block;font-size:11px;margin-bottom:2px}.step span{font-size:9px;color:var(--muted)}
 .questions{background:#fff;border:1px solid #E0E6EE;border-radius:22px;padding:16px;box-shadow:var(--shadow)}.qhead{display:flex;justify-content:space-between;gap:12px;margin-bottom:10px}.qhead b{font-size:13px}.qhead span{font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:#667085}
 .qrow{display:grid;grid-template-columns:1.2fr .9fr .65fr;gap:8px;align-items:center;background:#FAFBFC;border:1px solid #E7EBF1;border-radius:11px;padding:9px;margin-top:7px}.qrow b{font-size:9px}.qrow span{font-size:8px;color:#667085}.state{justify-self:start;padding:4px 7px;border-radius:999px;font-size:7px!important;text-transform:uppercase;letter-spacing:.06em;font-weight:800}.state.ok{background:#E8F6EF;color:var(--good)}.state.review{background:#FFF5DD;color:var(--warn)}.state.info{background:#EAF0FF;color:var(--blue)}
@@ -45,7 +45,7 @@ section.screen{padding:70px 0}.section-grid{display:grid;grid-template-columns:.
 footer{background:#fff;border-top:1px solid #E2E6EC;padding:18px 0}.footer{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:10px;color:#667085}
 .mobile-cta{display:none}.modal{position:fixed;inset:0;z-index:120;background:rgba(13,20,38,.45);display:none;align-items:flex-end;justify-content:center;padding:18px}.modal.open{display:flex}.modal-card{width:min(680px,100%);background:#fff;border-radius:24px;padding:20px;box-shadow:0 30px 80px rgba(13,20,38,.30)}.modal-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:15px}.modal-top h3{font-size:25px;margin-bottom:3px}.modal-top p{font-size:10px;color:var(--muted);margin:0}.close{width:36px;height:36px;border-radius:50%;border:1px solid #E2E7EE;background:#FAFBFC;cursor:pointer}.step-form{display:none}.step-form.active{display:block}.form-label{font-size:11px;font-weight:800;margin-bottom:9px}.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.choice{border:1px solid #E1E6EE;background:#FAFBFC;border-radius:13px;padding:12px;text-align:left;cursor:pointer;font-weight:700;color:#344054}.choice.active{border-color:var(--blue);background:#F2F5FF;color:var(--blue)}.form-input{width:100%;height:46px;border-radius:12px;border:1px solid #DDE3EC;padding:0 13px}.form-actions{display:flex;justify-content:space-between;gap:8px;margin-top:15px}.summary{background:#F8FAFC;border:1px solid #E4E9F0;border-radius:13px;padding:12px;font-size:10px;color:#475467;white-space:pre-line}
 @media(max-width:1020px){.navlinks{display:none}.hero-grid,.section-grid{grid-template-columns:1fr}.quick-grid,.flow,.territory-list,.buckets,.deliver,.pricing-grid{grid-template-columns:repeat(2,1fr)}.node:after{display:none}}
-@media(max-width:720px){body{padding-bottom:68px}.wrap{width:min(var(--max),calc(100% - 20px))}.nav{height:62px}.nav .btn-blue{display:none}.hero{padding-top:28px}.hero-intro{font-size:23px}.hero h1{font-size:43px;line-height:.95}.hero .lead{font-size:16px}.hero-actions .btn{width:100%}.quick-grid,.flow,.territory-list,.buckets,.deliver,.pricing-grid,.choices{grid-template-columns:1fr}section.screen{padding:55px 0}.qrow{grid-template-columns:1.3fr .8fr}.qrow>*:nth-child(3){display:none}.cta-box{grid-template-columns:1fr;padding:25px}.footer{display:block}.footer div+div{margin-top:5px}.mobile-cta{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:90;height:48px;border:0;border-radius:14px;background:var(--lime);color:var(--navy);align-items:center;justify-content:center;font-weight:800;box-shadow:0 14px 30px rgba(16,24,40,.17);transition:.2s}.mobile-cta.hidden{opacity:0;transform:translateY(68px);pointer-events:none}}
+@media(max-width:720px){body{padding-bottom:68px}.wrap{width:min(var(--max),calc(100% - 20px))}.nav{height:62px}.nav .btn-blue{display:none}.hero{padding-top:34px}.hero-intro{display:none}.hero h1{font-size:40px;line-height:.98;max-width:620px}.hero .lead{font-size:16px;line-height:1.48}.hero-actions .btn{width:100%}.quick-grid,.flow,.territory-list,.buckets,.deliver,.pricing-grid,.choices{grid-template-columns:1fr}section.screen{padding:55px 0}.qrow{grid-template-columns:1.3fr .8fr}.qrow>*:nth-child(3){display:none}.cta-box{grid-template-columns:1fr;padding:25px}.footer{display:block}.footer div+div{margin-top:5px}.mobile-cta{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:90;height:48px;border:0;border-radius:14px;background:var(--lime);color:var(--navy);align-items:center;justify-content:center;font-weight:800;box-shadow:0 14px 30px rgba(16,24,40,.17);transition:.2s}.mobile-cta.hidden{opacity:0;transform:translateY(68px);pointer-events:none}}
 </style>
 </head>
 <body>
@@ -73,37 +73,30 @@ footer{background:#fff;border-top:1px solid #E2E6EC;padding:18px 0}.footer{displ
 <section class="hero">
 <div class="wrap hero-grid">
 <div class="hero-copy">
-<div class="kicker">Corretaje integral para cambios de vida</div>
-<div class="hero-intro">No partimos preguntando qué propiedad quieres comprar. <span class="serif">Partimos preguntando cómo quieres vivir.</span></div>
-<h1>Tú imagina cómo quieres vivir. <span class="hl">Nosotros ordenamos cómo llegar.</span></h1>
-<p class="lead">¿Vender tu casa y construir otra a tu gusto? ¿Comprar una parcela e irte al campo? ¿Cambiar de ciudad? ¿Liberar parte de tu patrimonio? <strong>Nosotros buscamos, investigamos, comparamos y coordinamos para que no tengas que hacerlo todo tú.</strong></p>
-<div class="hero-actions"><button class="btn btn-primary" id="hero-cta" data-open>Cuéntanos qué quieres lograr →</button><a class="btn btn-secondary" href="#como">Ver cómo te ayudamos</a></div>
-<div class="hero-proof"><div class="proof"><i>✓</i>Tú sigues con tu vida</div><div class="proof"><i>✓</i>Nosotros hacemos la tarea</div><div class="proof"><i>✓</i>Nada importante se oculta</div></div>
+<div class="kicker">Corretaje para cambios de vida</div>
+<h1>Cambia de vida. <span class="hl">Sin convertirlo en otro trabajo.</span></h1>
+<p class="lead">Vende, compra una parcela o construye tu casa. <strong>Nosotros investigamos, comparamos y coordinamos por ti.</strong></p>
+<div class="hero-actions"><button class="btn btn-primary" id="hero-cta" data-open>Quiero ordenar mi cambio →</button><a class="btn btn-secondary" href="#como">Ver cómo funciona</a></div>
+<div class="hero-proof"><div class="proof"><i>✓</i>Menos tiempo perdido</div><div class="proof"><i>✓</i>Menos incertidumbre</div><div class="proof"><i>✓</i>Tú decides</div></div>
 </div>
 
 <div class="work-card">
-<div class="work-head"><div><small>Así trabajamos por ti</small><b>Entender → investigar → comparar → coordinar</b></div><div class="badge">personas + datos</div></div>
+<div class="work-head"><div><small>Así de simple</small><b>Tú decides. Nosotros hacemos la tarea.</b></div><div class="badge">personas + datos</div></div>
 <div class="flow">
 <div class="node"><div class="ico"><svg class="icon"><use href="#home"/></svg></div><b>Entender</b><span>Cómo quieres vivir, qué tienes hoy y qué no quieres sacrificar.</span></div>
 <div class="node"><div class="ico"><svg class="icon"><use href="#doc"/></svg></div><b>Investigar</b><span>Datos, documentos, costos, riesgos y opciones reales.</span></div>
 <div class="node"><div class="ico"><svg class="icon"><use href="#chart"/></svg></div><b>Comparar</b><span>Qué alternativa hace más sentido y qué dudas siguen abiertas.</span></div>
 <div class="node"><div class="ico"><svg class="icon"><use href="#shield"/></svg></div><b>Coordinar</b><span>Qué hacer primero, quién debe intervenir y qué falta confirmar.</span></div>
 </div>
-<div class="rule"><strong>Nuestra regla:</strong> antes de decirte “esta opción es buena”, debemos poder explicarte por qué, qué comprobamos y qué falta confirmar.</div>
+<div class="rule"><strong>Antes de recomendar:</strong> comprobamos lo importante y te decimos qué todavía falta confirmar.</div>
 </div>
 </div>
 
-<div class="wrap quick-grid">
-<div class="quick"><b>No te mandamos cien enlaces</b><span>Filtramos y te mostramos solo lo que vale la pena revisar.</span></div>
-<div class="quick"><b>No te dejamos persiguiendo proveedores</b><span>Coordinamos conversaciones, cotizaciones y siguientes pasos.</span></div>
-<div class="quick"><b>No te llenamos de tecnicismos</b><span>Traducimos información compleja a decisiones entendibles.</span></div>
-<div class="quick"><b>No miramos solo la propiedad</b><span>También miramos el lugar, los costos, el clima y lo que viene después.</span></div>
-</div>
 </section>
 
 <section class="screen" id="como">
 <div class="wrap section-grid">
-<div class="copy"><div class="kicker">Tu vida primero</div><h2>Cambiar de vida no debería convertirse en un segundo trabajo.</h2><p>Tienes trabajo, familia, responsabilidades y poco tiempo. No deberías pasar tus noches llamando corredores, revisando parcelas, cotizando casas, entendiendo permisos o tratando de descubrir si un terreno tendrá problemas en invierno.</p></div>
+<div class="copy"><div class="kicker">Tu tiempo importa</div><h2>Tú sigue con tu vida. Nosotros movemos el proceso.</h2><p>Buscamos, llamamos, cotizamos, revisamos y coordinamos. Tú entras cuando hay algo importante que decidir.</p></div>
 <div class="stack">
 <div class="step"><div class="num">1</div><div><b>Tú nos cuentas cómo quieres vivir</b><span>Campo, ciudad, parcela, casa propia, menos deuda, más espacio o más tranquilidad.</span></div></div>
 <div class="step"><div class="num">2</div><div><b>Nosotros hacemos la búsqueda pesada</b><span>Opciones, llamados, antecedentes, precios, servicios, documentos y costos.</span></div></div>
@@ -116,7 +109,7 @@ footer{background:#fff;border-top:1px solid #E2E6EC;padding:18px 0}.footer{displ
 
 <section class="screen soft" id="elegir">
 <div class="wrap section-grid">
-<div class="copy"><div class="kicker">Antes de recomendar</div><h2>Antes de decirte que una opción es buena, hacemos la tarea.</h2><p>No damos por cierto lo que aparece en un aviso. Revisamos qué está confirmado, qué viene de una cotización, qué depende de un especialista y qué todavía hay que comprobar.</p><div class="future-note"><strong>Ejemplo:</strong> “hay agua” puede significar cosas muy distintas. Queremos saber de dónde viene esa información, cuánto cuesta conectarse y si realmente sirve para tu proyecto.</div></div>
+<div class="copy"><div class="kicker">Antes de recomendar</div><h2>Hacemos las preguntas difíciles antes de que aparezcan los problemas.</h2><p>Precio real. Agua. Acceso. Invierno. Documentos. Costos. Lo que no está claro, se marca y se comprueba.</p><div class="future-note"><strong>Ejemplo:</strong> “hay agua” no basta. Queremos saber de dónde viene, cuánto cuesta conectarse y si realmente sirve para tu proyecto.</div></div>
 <div class="questions">
 <div class="qhead"><div><b>Preguntas que hacemos antes de avanzar</b><span>una muestra del proceso</span></div><span>ejemplo</span></div>
 <div class="qrow"><b>¿Cuánto vale realmente?</b><span>Mercado + comparables</span><span class="state info">estimar</span></div>
@@ -130,7 +123,7 @@ footer{background:#fff;border-top:1px solid #E2E6EC;padding:18px 0}.footer{displ
 
 <section class="screen" id="lugar">
 <div class="wrap section-grid">
-<div class="copy"><div class="kicker">Cómo sería vivir ahí</div><h2>Una casa no se elige pensando solo en un día bonito.</h2><p>También queremos saber cómo se vive ahí en invierno, qué pasa cuando llueve fuerte, si el camino sigue siendo cómodo, cómo tendrás agua y qué puede cambiar alrededor con los años.</p>
+<div class="copy"><div class="kicker">Cómo sería vivir ahí</div><h2>Lo bonito no basta.</h2><p>Queremos saber cómo se vive ahí todo el año: agua, acceso, servicios, suelo, invierno y entorno.</p>
 <div class="territory-list" style="margin-top:15px">
 <div class="titem"><div class="ico"><svg class="icon"><use href="#water"/></svg></div><div><b>¿Qué pasa con el agua?</b><span>Lluvias, drenaje, cauces, zonas bajas y posibles problemas.</span></div></div>
 <div class="titem"><div class="ico"><svg class="icon"><use href="#map"/></svg></div><div><b>¿Tendrás lo que necesitas?</b><span>Agua, solución sanitaria, electricidad, internet y servicios.</span></div></div>
@@ -161,7 +154,7 @@ footer{background:#fff;border-top:1px solid #E2E6EC;padding:18px 0}.footer{displ
 
 <section class="screen soft">
 <div class="wrap section-grid">
-<div class="copy"><div class="kicker">Mirar un poco más adelante</div><h2>También miramos qué podría cambiar alrededor.</h2><p>El mercado cambia, las ciudades crecen, aparecen rutas y servicios nuevos. Revisamos esas señales para entender mejor el sector hoy y construir escenarios a 5 o 10 años.</p><div class="future-note"><strong>Sin promesas:</strong> no te diremos que una propiedad “seguro subirá”. Te mostramos qué señales podrían favorecerla o limitarla y qué todavía no se puede saber.</div></div>
+<div class="copy"><div class="kicker">Lo que viene</div><h2>También miramos lo que puede cambiar.</h2><p>Mercado, rutas, servicios y crecimiento del sector. Lo suficiente para decidir mejor hoy, sin prometer el futuro.</p><div class="future-note"><strong>Sin promesas:</strong> mostramos señales que podrían favorecer o limitar el valor de una zona.</div></div>
 <div class="signal-card"><h3>Señales que ponemos sobre la mesa</h3>
 <div class="sig"><b>Conectividad</b><div class="bar"><i style="width:76%"></i></div><span>revisar</span></div>
 <div class="sig"><b>Servicios</b><div class="bar"><i style="width:58%"></i></div><span>comparar</span></div>
@@ -174,7 +167,7 @@ footer{background:#fff;border-top:1px solid #E2E6EC;padding:18px 0}.footer{displ
 
 <section class="screen case" id="caso">
 <div class="wrap section-grid">
-<div class="copy"><div class="kicker">Un caso como el de nuestra primera clienta</div><h2>Quiere vender, cambiarse y seguir con su vida mientras alguien ordena todo lo demás.</h2><p>Imagina a una persona con un departamento cercano a $100 millones. Quiere venderlo, comprar una parcela, construir una casa, mantener respaldo y quizás invertir una parte. Pero también tiene trabajo, familia y responsabilidades. No quiere pasar meses coordinando todo sola.</p><div class="case-note"><strong>Ahí entramos nosotros:</strong> vendemos, calculamos cuánto queda realmente, buscamos opciones, hacemos las preguntas incómodas, pedimos cotizaciones y le mostramos rutas simples para decidir.</div></div>
+<div class="copy"><div class="kicker">Caso real</div><h2>Ella quiere cambiarse. No quiere pasar seis meses organizándolo.</h2><p>Quiere vender su departamento, comprar una parcela y construir. También quiere cuidar su dinero y su tiempo.</p><div class="case-note"><strong>Nuestro trabajo:</strong> vender, investigar, cotizar, comparar y dejarle pocas decisiones importantes sobre la mesa.</div></div>
 <div class="money"><div class="money-head"><span>Ejemplo de capital neto hipotético</span><strong>$90 M</strong></div><h3>Una ruta posible, no una plantilla</h3>
 <div class="buckets">
 <div class="bucket"><div class="ico"><svg class="icon"><use href="#home"/></svg></div><b>Nueva vivienda</b><strong>$45 M</strong><span>Parcela + casa + habilitación.</span></div>
@@ -187,7 +180,7 @@ footer{background:#fff;border-top:1px solid #E2E6EC;padding:18px 0}.footer{displ
 
 <section class="screen">
 <div class="wrap section-grid">
-<div class="copy"><div class="kicker">Lo que te llevas</div><h2>Te entregamos claridad, no más trabajo.</h2><p>Recibes un plan que puedas entender y conversar con tu familia: cuánto cuesta, qué opciones existen, qué riesgos vimos, qué falta comprobar y qué haríamos después.</p></div>
+<div class="copy"><div class="kicker">Lo que recibes</div><h2>Claridad.</h2><p>Qué conviene. Cuánto cuesta. Qué riesgos hay. Qué falta confirmar. Y qué hacemos después.</p></div>
 <div class="deliver">
 <div class="deliver-card"><div class="ico"><svg class="icon"><use href="#doc"/></svg></div><b>Tu caso ordenado</b><span>Lo que sabemos, lo que falta y por qué una opción tiene sentido.</span></div>
 <div class="deliver-card"><div class="ico"><svg class="icon"><use href="#money"/></svg></div><b>Las cuentas claras</b><span>Cuánto entra, cuánto sale, cuánto guardar y qué puede cambiar.</span></div>
@@ -199,7 +192,7 @@ footer{background:#fff;border-top:1px solid #E2E6EC;padding:18px 0}.footer{displ
 
 <section class="screen soft">
 <div class="wrap section-grid">
-<div class="copy"><div class="kicker">Mientras tú sigues con tu vida</div><h2>Tú decides lo importante. Nosotros hacemos el trabajo que hay detrás.</h2><p>Buscar, llamar, comparar, cotizar, revisar documentos, hablar con proveedores y coordinar especialistas consume tiempo. Esa carga queda de nuestro lado para que tú puedas seguir con tu trabajo, tu familia y tus responsabilidades.</p><div class="future-note"><strong>No pretendemos saberlo todo.</strong> Cuando una decisión necesita una revisión especializada, incorporamos a la persona adecuada y dejamos claro qué fue revisado y qué sigue pendiente.</div></div>
+<div class="copy"><div class="kicker">Una sola coordinación</div><h2>Tú decides. Nosotros coordinamos.</h2><p>Corredores, proveedores y especialistas entran cuando hacen falta. Tú no tienes que perseguir a todos.</p><div class="future-note"><strong>Si algo requiere una revisión especializada, la pedimos.</strong> Y te decimos qué está confirmado y qué sigue pendiente.</div></div>
 <div class="stack">
 <div class="step"><div class="num">✓</div><div><b>Corretaje y negociación</b><span>Venta, compra, valorización y cierre.</span></div></div>
 <div class="step"><div class="num">✓</div><div><b>Territorio y datos</b><span>Mapas, accesos, servicios y contexto.</span></div></div>
@@ -220,7 +213,7 @@ footer{background:#fff;border-top:1px solid #E2E6EC;padding:18px 0}.footer{displ
 </div>
 </section>
 
-<section class="cta" id="contacto"><div class="wrap"><div class="cta-box" id="final-cta"><div><h2>Tú cuéntanos cómo te gustaría vivir. Nosotros te ayudamos a ordenar el camino.</h2><p>No necesitas tener la solución. Puedes querer vender, comprar una parcela, irte al campo, construir otra casa o simplemente saber qué opciones tienes. Partimos por entender tu vida, no por venderte una propiedad.</p></div><button class="btn btn-primary" data-open>Cuéntanos tu caso →</button></div></div></section>
+<section class="cta" id="contacto"><div class="wrap"><div class="cta-box" id="final-cta"><div><h2>¿Quieres cambiarte, irte al campo o construir?</h2><p>Cuéntanos qué quieres lograr. Nosotros ordenamos el camino.</p></div><button class="btn btn-primary" data-open>Quiero conversar →</button></div></div></section>
 </main>
 
 <footer><div class="wrap footer"><div><strong style="color:#0D1426">Deep Living.</strong> · Corretaje integral para cambios de vida.</div><div>contacto@deepanalytica.cl</div></div></footer>
