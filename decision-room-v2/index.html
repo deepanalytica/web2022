@@ -266,6 +266,8 @@
     <div class="app-top-center"><span id="workspaceName">My Decisions</span></div>
     <div class="app-top-actions">
       <button class="icon-btn" id="exportBtn" title="Exportar">↗</button>
+      <button class="icon-btn" id="shareDecisionBtn" title="Compartir decisión">⌁</button>
+      <button class="ghost-dark" id="feedbackBtn">Sugerir mejora</button>
       <button class="ghost-dark" id="architectureBtn">Arquitectura</button>
       <button class="new-decision-btn" id="newDecisionBtn">+ Nueva decisión</button>
     </div>
@@ -314,8 +316,9 @@
       <label><span>¿Qué no quieres sacrificar?</span><input id="decisionConstraint" placeholder="Ej.: liquidez, tiempo con mi familia, reputación..."></label>
       <label><span>¿Cuándo necesitas decidir?</span><input id="decisionDeadline" placeholder="Ej.: este mes, antes del viernes..."></label>
     </div>
+    <div class="privacy-inline"><i></i><span>Privacidad por diseño: en esta preview, lo que escribes queda en este navegador y no se usa para entrenar modelos.</span></div>
     <div class="modal-actions">
-      <span class="modal-note">Puedes corregir todo después.</span>
+      <span class="modal-note">Puedes corregir todo después · Ctrl/⌘ + Enter</span>
       <button class="btn-main" id="createDecisionBtn">Construir la sala <span>→</span></button>
     </div>
   </div>
@@ -344,6 +347,42 @@
     <p>Estamos abriendo acceso temprano a personas y equipos que toman decisiones donde equivocarse cuesta.</p>
     <a class="btn-main full" href="mailto:contacto@deepanalytica.cl?subject=Quiero%20acceso%20fundador%20a%20Decision%20Room">Solicitar acceso fundador →</a>
     <small>Sin pago en esta preview. La suscripción comercial se habilitará cuando el producto esté conectado al backend.</small>
+  </div>
+</div>
+
+
+<div class="modal-backdrop hidden" id="shareModal">
+  <div class="modal-card compact-modal">
+    <div class="modal-top">
+      <div><span class="modal-kicker">Compartir sin backend</span><h3>Comparte esta Decision Room.</h3></div>
+      <button class="modal-close" data-close-share>×</button>
+    </div>
+    <p class="modal-copy">El estado de esta decisión se codifica dentro del enlace. No se sube a un servidor de Decision Room.</p>
+    <label class="share-field"><span>Enlace compartible</span><input id="shareUrl" readonly></label>
+    <div class="modal-actions">
+      <span class="modal-note">Quien tenga el enlace podrá abrir una copia de la sala.</span>
+      <button class="btn-main" id="copyShareBtn">Copiar enlace <span>→</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="feedbackModal">
+  <div class="modal-card compact-modal">
+    <div class="modal-top">
+      <div><span class="modal-kicker">Customer-led improvement</span><h3>¿Qué deberíamos mejorar?</h3></div>
+      <button class="modal-close" data-close-feedback>×</button>
+    </div>
+    <p class="modal-copy">Cada sugerencia se analiza como evidencia de producto. No se convierte automáticamente en una feature.</p>
+    <textarea class="feedback-textarea" id="feedbackText" placeholder="Cuéntanos qué te faltó, qué te confundió o qué haría esta herramienta mucho más útil para ti."></textarea>
+    <div class="feedback-meta-grid">
+      <label><span>Contexto opcional</span><input id="feedbackContext" placeholder="Ej.: estaba evaluando una inversión..."></label>
+      <label><span>Impacto</span><select id="feedbackImpact"><option>Me ahorraría tiempo</option><option>Reduciría riesgo</option><option>Me daría más claridad</option><option>Me permitiría usarlo con mi equipo</option><option>Otro</option></select></label>
+    </div>
+    <div class="privacy-inline"><i></i><span>Al continuar abrimos tu correo. Tú decides si envías el mensaje.</span></div>
+    <div class="modal-actions">
+      <span class="modal-note">Feedback → análisis → Meta-Harness → revisión adversarial → implementación si corresponde.</span>
+      <button class="btn-main" id="sendFeedbackBtn">Preparar sugerencia <span>→</span></button>
+    </div>
   </div>
 </div>
 
