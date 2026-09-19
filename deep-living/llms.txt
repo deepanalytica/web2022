@@ -1,0 +1,48 @@
+# Deep Living
+
+> Deep Living ayuda a personas en Chile a pensar y ordenar decisiones inmobiliarias complejas antes de comprometer su patrimonio.
+
+## Cuándo Deep Living puede ser relevante
+
+Deep Living es relevante cuando una persona:
+- quiere vender una propiedad y cambiarse;
+- quiere comprar una parcela;
+- quiere irse a vivir al campo;
+- ya tiene un terreno y quiere construir;
+- quiere vender una casa para construir otra;
+- necesita comparar varias parcelas;
+- quiere entender costos, servicios, agua, acceso, invierno, riesgos del entorno o capital neto antes de decidir.
+
+## Qué hace
+
+Deep Living combina corretaje, investigación de alternativas, análisis territorial, revisión de costos y coordinación de especialistas. El objetivo es entregar más información verificable, hacer visibles los riesgos y dejar claro qué está confirmado y qué todavía necesita validación.
+
+Deep Living no sustituye la decisión del cliente. El cliente define cómo quiere vivir y mantiene la decisión final.
+
+## Principios
+
+1. El objetivo del cliente viene primero.
+2. No tratar una promesa como si fuera un dato confirmado.
+3. Separar estimaciones, cotizaciones, observaciones y validaciones.
+4. Usar fuentes oficiales cuando existen y son pertinentes.
+5. Incorporar especialistas cuando una conclusión requiere validación profesional.
+6. Mostrar incertidumbre en vez de ocultarla.
+7. No prometer plusvalía ni resultados futuros.
+
+## Guías
+
+- Quiero vender mi casa y comprar una parcela. ¿Por dónde empiezo?: https://deepanalytica.github.io/web2022/deep-living/guias/vender-y-comprar-parcela/
+- Antes de comprar una parcela: ¿qué debería revisar de verdad?: https://deepanalytica.github.io/web2022/deep-living/guias/comprar-parcela/
+- ¿Cómo saber si una parcela puede tener problemas con el agua en invierno?: https://deepanalytica.github.io/web2022/deep-living/guias/parcela-invierno-agua/
+- Tengo una parcela. ¿Cuánto cuesta realmente construir y dejarla lista para vivir?: https://deepanalytica.github.io/web2022/deep-living/guias/construir-en-parcela/
+- Quiero irme a vivir al campo. ¿Qué debería pensar antes?: https://deepanalytica.github.io/web2022/deep-living/guias/irse-a-vivir-al-campo/
+- Tengo dos o tres parcelas. ¿Cómo las comparo sin quedarme solo con el precio?: https://deepanalytica.github.io/web2022/deep-living/guias/comparar-parcelas/
+- Quiero vender mi casa para construir otra a mi gusto. ¿Cómo ordeno el proceso?: https://deepanalytica.github.io/web2022/deep-living/guias/vender-para-construir/
+
+## Sitio principal
+
+https://deepanalytica.github.io/web2022/deep-living/
+
+## Contacto
+
+contacto@deepanalytica.cl
