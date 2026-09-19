@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Decision Room V1 — Deep Analytica</title>
+<meta name="description" content="Convierte una idea en preguntas, evidencia, escenarios, una decisión humana y acciones trazables.">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#ffffff">
+<style>
+:root{
+  --ink:#0b1220;--muted:#647084;--paper:#f7f8f5;--white:#fff;--line:#e3e7ec;
+  --blue:#3157d5;--blue2:#5d7cff;--lime:#c9f36a;--soft:#eef2f6;--amber:#b97812;
+  --red:#b54848;--green:#23745a;--shadow:0 18px 60px rgba(11,18,32,.08);
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+button,textarea,input{font:inherit}button{cursor:pointer}.hide{display:none!important}
+.topbar{position:sticky;top:0;z-index:50;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(11,18,32,.07)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.04em}.brand-dot{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px rgba(201,243,106,.22)}
+.top-actions{display:flex;gap:8px;align-items:center}.pill{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#596579;background:#f2f4f7;border:1px solid #e5e9ef;border-radius:999px;padding:7px 10px}
+.ghost{border:1px solid #dfe4eb;background:white;color:var(--ink);border-radius:11px;padding:9px 12px;font-size:11px;font-weight:750}.ghost:hover{background:#f7f9fb}
+.intake{min-height:calc(100vh - 64px);display:grid;place-items:center;padding:42px 18px;background:
+ radial-gradient(circle at 16% 16%,rgba(49,87,213,.07),transparent 27%),
+ radial-gradient(circle at 84% 10%,rgba(201,243,106,.16),transparent 26%),
+ linear-gradient(180deg,#fff 0,#f7f8f5 78%)}
+.intake-inner{width:min(900px,100%);text-align:center}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:850;color:#5a6578}
+h1{font-size:clamp(52px,8vw,92px);line-height:.91;letter-spacing:-.065em;margin:14px auto 18px;max-width:850px}
+.hero-lead{font-size:18px;line-height:1.55;color:#536075;max-width:720px;margin:0 auto 26px}.hero-lead strong{color:var(--ink)}
+.idea-box{width:min(800px,100%);margin:0 auto;background:var(--white);border:1px solid #dfe4eb;border-radius:22px;padding:12px;box-shadow:var(--shadow);text-align:left}
+.idea-box textarea{width:100%;min-height:118px;resize:vertical;border:0;outline:0;padding:14px 14px 8px;font-size:19px;line-height:1.45;color:var(--ink);background:transparent}
+.idea-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px}.hint{font-size:10px;color:#7a8494}.primary{border:0;background:var(--lime);color:var(--ink);font-weight:850;border-radius:13px;padding:13px 17px;box-shadow:0 10px 22px rgba(201,243,106,.24)}
+.samples{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:16px auto 0;max-width:820px}.sample{border:1px solid #dfe4eb;background:rgba(255,255,255,.78);border-radius:999px;padding:9px 12px;font-size:10px;color:#526075;font-weight:700}
+.promise{margin-top:22px;font-size:11px;color:#6d788b}.promise b{color:var(--ink)}
+.room{min-height:calc(100vh - 64px)}.room-head{background:white;border-bottom:1px solid var(--line);padding:18px 22px}
+.room-head-inner{max-width:1440px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.room-kicker{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#7a8494;font-weight:800}.room-title{font-size:24px;line-height:1.2;letter-spacing:-.035em;margin:5px 0 0;max-width:900px}.room-meta{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.gate{border-radius:999px;padding:7px 10px;font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.gate.review{background:#fff4dc;color:#8c5d0c}.gate.ready{background:#e7f6ef;color:#1f684f}
+.room-grid{max-width:1440px;margin:auto;display:grid;grid-template-columns:210px minmax(0,1fr) 300px;gap:0;min-height:calc(100vh - 132px)}
+.stage-nav{border-right:1px solid var(--line);padding:20px 14px;background:#fbfcfa}.stage-nav .nav-label{font-size:9px;color:#8a94a4;text-transform:uppercase;letter-spacing:.1em;font-weight:800;padding:0 8px 10px}
+.stage-btn{width:100%;display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:center;text-align:left;border:0;background:transparent;border-radius:12px;padding:10px 8px;color:#687487;margin:2px 0}.stage-btn:hover{background:#f1f4f7}.stage-btn.active{background:white;color:var(--ink);box-shadow:0 4px 16px rgba(11,18,32,.06)}.stage-num{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;border:1px solid #dfe4eb;background:#fff;font-size:9px;font-weight:850}.stage-btn.active .stage-num{background:var(--ink);color:white;border-color:var(--ink)}.stage-text b{display:block;font-size:11px}.stage-text span{font-size:8px;color:#8a94a4}
+.workspace{padding:28px;min-width:0}.workspace-inner{max-width:880px;margin:auto}.section-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}.section-top h2{font-size:36px;line-height:1;letter-spacing:-.05em;margin:4px 0 7px}.section-top p{font-size:13px;line-height:1.55;color:#647084;margin:0;max-width:680px}.tiny{font-size:9px;color:#8590a0}
+.panel{background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px;box-shadow:0 12px 35px rgba(11,18,32,.045);margin-bottom:12px}.panel-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px}.panel-title b{font-size:12px}.panel-title span{font-size:9px;color:#7a8494}
+.big-quote{font-size:25px;line-height:1.25;letter-spacing:-.03em;margin:0;color:#1c2840}.mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.mini{background:#f8fafb;border:1px solid #e7ebf0;border-radius:13px;padding:13px}.mini b{display:block;font-size:10px;margin-bottom:4px}.mini span{font-size:9px;line-height:1.45;color:#677386}
+.list{display:grid;gap:8px}.item{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:start;border:1px solid #e4e8ee;border-radius:13px;padding:11px;background:#fff}.item-index{width:28px;height:28px;border-radius:9px;background:#f0f3f6;display:grid;place-items:center;font-size:9px;font-weight:850}.item b{display:block;font-size:10px;margin-bottom:2px}.item p{font-size:9px;line-height:1.45;color:#697588;margin:0}.status{font-size:8px;font-weight:850;text-transform:uppercase;letter-spacing:.06em;border-radius:999px;padding:5px 7px;white-space:nowrap}.status.verified{background:#e6f5ee;color:#21684f}.status.pending{background:#fff3d7;color:#98630c}.status.unknown{background:#edf1f5;color:#667085}
+.evidence{display:grid;gap:9px}.e-card{border:1px solid #e2e7ed;border-radius:14px;background:white;overflow:hidden}.e-main{display:grid;grid-template-columns:1fr auto;gap:12px;padding:13px;align-items:start}.e-name{font-size:11px;font-weight:800}.e-source{font-size:9px;color:#6b778a;margin-top:3px}.e-actions{display:flex;gap:6px}.small-btn{border:1px solid #dfe5ec;background:#fff;border-radius:9px;padding:6px 8px;font-size:8px;font-weight:800;color:#526075}.small-btn.verify{background:#eef9f4;color:#23684f;border-color:#d7efe4}.e-why{display:none;background:#f8fafb;border-top:1px solid #e6eaf0;padding:11px 13px;font-size:9px;line-height:1.5;color:#5e6a7d}.e-card.open .e-why{display:block}
+.scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.scenario{border:1px solid #e0e5ec;background:#fff;border-radius:15px;padding:14px;text-align:left;transition:.16s}.scenario:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(11,18,32,.07)}.scenario.selected{border:2px solid var(--blue);padding:13px;background:#f8faff}.scenario .route{font-size:8px;text-transform:uppercase;letter-spacing:.1em;font-weight:850;color:var(--blue)}.scenario h3{font-size:18px;line-height:1.1;letter-spacing:-.03em;margin:8px 0 8px}.scenario p{font-size:9px;line-height:1.45;color:#677386;margin:0 0 10px}.scenario dl{margin:0;display:grid;gap:7px}.scenario dt{font-size:7px;text-transform:uppercase;letter-spacing:.08em;color:#8b95a4;font-weight:850}.scenario dd{font-size:9px;margin:1px 0 0;color:#3f4c61}
+.decision-band{border-radius:16px;background:linear-gradient(120deg,#0d1628,#1c2b4a);color:white;padding:19px;margin-bottom:12px}.decision-band .k{font-size:8px;text-transform:uppercase;letter-spacing:.12em;color:#b7c3d5;font-weight:850}.decision-band h3{font-size:24px;letter-spacing:-.04em;margin:7px 0}.decision-band p{font-size:10px;line-height:1.5;color:#c8d0dc;margin:0}.decision-band .lime{color:var(--lime)}
+.action{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:start;padding:12px;border:1px solid #e3e7ed;border-radius:13px;background:#fff}.check{width:29px;height:29px;border-radius:9px;border:1px solid #d9e0e7;background:#fff;display:grid;place-items:center;color:transparent}.check.done{background:#e9f6ef;border-color:#d0ebdf;color:#24694f}.action b{font-size:10px;display:block}.action span{font-size:9px;color:#6d788a}.owner{font-size:8px;color:#7d8796;background:#f3f5f7;border-radius:999px;padding:5px 7px}
+.side{border-left:1px solid var(--line);padding:20px 16px;background:#fbfcfa}.side h4{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#7d8797;margin:0 0 10px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:16px}.stat{border:1px solid #e2e7ed;background:white;border-radius:11px;padding:9px;text-align:center}.stat strong{display:block;font-size:18px;letter-spacing:-.04em}.stat span{font-size:7px;text-transform:uppercase;color:#8a94a4}
+.trace{display:grid;gap:7px}.trace-row{padding:9px;border:1px solid #e4e8ee;background:#fff;border-radius:11px}.trace-row b{display:block;font-size:9px;margin-bottom:2px}.trace-row span{font-size:8px;color:#778294}.architecture-link{width:100%;margin-top:12px;border:1px dashed #ccd4de;background:transparent;border-radius:11px;padding:10px;font-size:9px;font-weight:800;color:#657185}
+.drawer{position:fixed;inset:0;z-index:100;display:none;background:rgba(11,18,32,.42);align-items:stretch;justify-content:flex-end}.drawer.open{display:flex}.drawer-card{width:min(520px,94vw);height:100%;overflow:auto;background:white;padding:24px;box-shadow:-18px 0 60px rgba(11,18,32,.18)}.drawer-top{display:flex;justify-content:space-between;gap:12px}.drawer h2{font-size:34px;line-height:1;letter-spacing:-.05em;margin:8px 0}.drawer p{font-size:11px;line-height:1.55;color:#627084}.arch-flow{display:grid;gap:7px;margin-top:16px}.arch-step{display:grid;grid-template-columns:30px 1fr;gap:9px;padding:11px;border:1px solid #e2e7ed;border-radius:12px;background:#fafbfc}.arch-step i{width:28px;height:28px;border-radius:8px;background:#111b30;color:white;display:grid;place-items:center;font-style:normal;font-size:9px}.arch-step b{font-size:10px;display:block}.arch-step span{font-size:8px;color:#748093}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(30px);opacity:0;pointer-events:none;background:#111b2d;color:white;border-radius:999px;padding:9px 13px;font-size:9px;font-weight:750;transition:.22s;z-index:120}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:1100px){.room-grid{grid-template-columns:178px minmax(0,1fr)}.side{display:none}.scenarios{grid-template-columns:1fr}.room-head-inner{display:block}.room-meta{justify-content:flex-start;margin-top:10px}}
+@media(max-width:720px){.topbar{padding:0 12px}.pill{display:none}.intake{padding:28px 12px}.intake-inner{text-align:left}h1{font-size:49px;margin-left:0}.hero-lead{font-size:16px}.idea-box textarea{font-size:17px}.samples{justify-content:flex-start}.idea-footer{align-items:flex-end}.hint{max-width:150px}.room-grid{display:block}.stage-nav{position:sticky;top:64px;z-index:20;border-right:0;border-bottom:1px solid var(--line);display:flex;overflow:auto;padding:8px;background:rgba(251,252,250,.96);backdrop-filter:blur(12px)}.stage-nav .nav-label{display:none}.stage-btn{min-width:132px;margin:0 3px;grid-template-columns:24px 1fr;padding:7px}.stage-num{width:23px;height:23px}.stage-text span{display:none}.workspace{padding:20px 12px}.section-top h2{font-size:31px}.mini-grid{grid-template-columns:1fr}.room-head{padding:14px 12px}.room-title{font-size:18px}.room-meta{display:none}.e-main{grid-template-columns:1fr}.scenarios{grid-template-columns:1fr}.item{grid-template-columns:28px 1fr}.item .status{grid-column:2}.action{grid-template-columns:30px 1fr}.owner{grid-column:2;justify-self:start}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-dot"></span>Deep Decision <span style="font-weight:500;color:#7b8798">/ Decision Room</span></div>
+  <div class="top-actions"><span class="pill">V1 Preview</span><button class="ghost" id="archBtn">Cómo funciona</button></div>
+</header>
+
+<section class="intake" id="intake">
+  <div class="intake-inner">
+    <div class="eyebrow">Idea → evidencia → decisión → acción</div>
+    <h1>Trae una idea.<br>Sal con una ruta.</h1>
+    <p class="hero-lead">No necesitas llegar con el problema perfectamente definido. <strong>Cuéntanos qué quieres lograr.</strong> El sistema convierte esa intención en preguntas, evidencia, rutas y acciones sin quitarte la decisión.</p>
+    <div class="idea-box">
+      <textarea id="idea" placeholder="Ej.: Quiero vender mi casa, comprar una parcela y construir sin comprometer todo mi patrimonio."></textarea>
+      <div class="idea-footer">
+        <span class="hint">⌘/Ctrl + Enter para abrir la sala</span>
+        <button class="primary" id="start">Abrir Decision Room →</button>
+      </div>
+    </div>
+    <div class="samples">
+      <button class="sample">Vender e irme al campo</button>
+      <button class="sample">Evaluar un proyecto minero</button>
+      <button class="sample">Abrir una nueva operación</button>
+      <button class="sample">Evaluar una idea de negocio</button>
+    </div>
+    <div class="promise"><b>Abierto en la evidencia.</b> Invisible en la complejidad. Humano en la decisión.</div>
+  </div>
+</section>
+
+<section class="room hide" id="room">
+  <div class="room-head">
+    <div class="room-head-inner">
+      <div><div class="room-kicker">Intención original · <span id="decisionId"></span></div><div class="room-title" id="roomTitle"></div></div>
+      <div class="room-meta"><span class="pill" id="domainPill"></span><span class="gate review" id="gatePill"></span><button class="ghost" id="shareBtn">Compartir</button><button class="ghost" id="resetBtn">Nueva idea</button></div>
+    </div>
+  </div>
+  <div class="room-grid">
+    <aside class="stage-nav">
+      <div class="nav-label">De idea a acción</div>
+      <button class="stage-btn" data-stage="intent"><span class="stage-num">01</span><span class="stage-text"><b>Intención</b><span>qué quieres</span></span></button><button class="stage-btn" data-stage="frame"><span class="stage-num">02</span><span class="stage-text"><b>Encuadre</b><span>qué importa</span></span></button><button class="stage-btn" data-stage="evidence"><span class="stage-num">03</span><span class="stage-text"><b>Evidencia</b><span>qué sabemos</span></span></button><button class="stage-btn" data-stage="scenarios"><span class="stage-num">04</span><span class="stage-text"><b>Rutas</b><span>qué opciones</span></span></button><button class="stage-btn" data-stage="decision"><span class="stage-num">05</span><span class="stage-text"><b>Decisión</b><span>checkpoint humano</span></span></button><button class="stage-btn" data-stage="action"><span class="stage-num">06</span><span class="stage-text"><b>Acción</b><span>qué sigue</span></span></button>
+    </aside>
+    <main class="workspace"><div class="workspace-inner" id="workspace"></div></main>
+    <aside class="side">
+      <h4>Estado de evidencia</h4>
+      <div class="stats"><div class="stat"><strong id="verifiedCount">0</strong><span>verificada</span></div><div class="stat"><strong id="pendingCount">0</strong><span>pendiente</span></div><div class="stat"><strong id="unknownCount">0</strong><span>desconocida</span></div></div>
+      <h4>Trazabilidad visible</h4>
+      <div class="trace" id="trace"></div>
+      <button class="architecture-link" id="archBtn2">Ver lo que opera detrás →</button>
+    </aside>
+  </div>
+</section>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-card">
+    <div class="drawer-top"><div><div class="eyebrow">Arquitectura abierta, no invasiva</div><h2>La interfaz es simple.<br>El control no.</h2></div><button class="ghost" id="closeDrawer">Cerrar</button></div>
+    <p>Esta V1 hace visible solo lo que ayuda a decidir. Detrás, el sistema separa intención, claims, evidencia, inferencias, incertidumbre, gates humanos y acciones. La complejidad aparece solo cuando alguien quiere inspeccionarla.</p>
+    <div class="arch-flow">
+      <div class="arch-step"><i>1</i><div><b>Intención</b><span>La idea original se conserva; no se sustituye por el criterio del sistema.</span></div></div>
+      <div class="arch-step"><i>2</i><div><b>Descomposición</b><span>La idea se convierte en preguntas que realmente pueden cambiar la decisión.</span></div></div>
+      <div class="arch-step"><i>3</i><div><b>Evidence graph</b><span>Cada afirmación crítica conserva fuente, estado, limitación y procedencia.</span></div></div>
+      <div class="arch-step"><i>4</i><div><b>Meta-Harness</b><span>Claims no sustentados quedan en REVIEW/BLOCK en vez de avanzar por parecer plausibles.</span></div></div>
+      <div class="arch-step"><i>5</i><div><b>Praxios</b><span>Orquesta herramientas, personas, checkpoints, handoffs y recuperación.</span></div></div>
+      <div class="arch-step"><i>6</i><div><b>Checkpoint humano</b><span>El sistema informa y estructura. La persona elige la ruta.</span></div></div>
+      <div class="arch-step"><i>7</i><div><b>Acción + aprendizaje</b><span>La ejecución produce nueva evidencia y puede reabrir la decisión.</span></div></div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const state={data:null,stage:'intent',selected:null};
+
+const samples=[
+  'Quiero vender mi departamento e irme a vivir al campo sin quedar sin respaldo.',
+  'Quiero decidir si vale la pena profundizar la exploración de un proyecto minero.',
+  'Quiero evaluar si conviene abrir una nueva operación en otra ciudad.',
+  'Tengo una idea de negocio y quiero saber qué tendría que comprobar antes de invertir.'
+];
+
+const domainConfig={
+  realestate:{
+    name:'Vivienda y patrimonio',
+    framing:['Qué cambio de vida quieres conseguir','Qué no quieres sacrificar','Cuánto capital quedará realmente disponible','Qué condiciones debe cumplir el lugar','Qué podría hacer inviable la transición'],
+    evidence:[
+      ['goal','Objetivo y prioridades','Declaración de la persona','verified',true,'La decisión debe conservar lo que la persona realmente quiere lograr.'],
+      ['capital','Capital neto disponible','Venta probable + deudas + costos de transición','pending',true,'El precio de venta no es lo mismo que el dinero que quedará para ejecutar el cambio.'],
+      ['title','Situación documental y uso posible','Documentos oficiales / revisión profesional','pending',true,'Antes de comprometer dinero hay que confirmar qué se compra y qué puede hacerse.'],
+      ['water','Agua y solución sanitaria','Proveedor / SSR / antecedentes oficiales / especialista','pending',true,'Una promesa de agua no equivale a una solución confirmada.'],
+      ['territory','Comportamiento del lugar','Cartografía + terreno + antecedentes de riesgo','pending',true,'Acceso, drenaje, invierno, pendiente y entorno pueden cambiar la habitabilidad y el costo.'],
+      ['build','Costo total de dejarlo habitable','Cotizaciones por alcance','unknown',true,'La casa es solo una parte: conexiones, terreno, acceso y exterior también cuestan.'],
+      ['market','Contexto de mercado y entorno','Comparables + señales territoriales','unknown',false,'Sirve para contextualizar la decisión sin convertir una proyección en una promesa.']
+    ],
+    scenarios:[
+      {title:'Transición por etapas',summary:'Vender, proteger capital y avanzar por hitos verificables.',optimizes:'Control de riesgo y liquidez',tradeoff:'Más etapas y coordinación',needs:'Capital neto + opción habitacional temporal',actions:['Confirmar valor neto de venta','Definir reserva mínima','Preseleccionar zonas','Validar 2–3 opciones','Cotizar solución habitable completa']},
+      {title:'Asegurar destino primero',summary:'Validar el lugar y el proyecto antes de cerrar la venta.',optimizes:'Continuidad de vivienda',tradeoff:'Puede exigir más capital o tiempo',needs:'Factibilidad de compra + cronograma',actions:['Definir criterios no negociables','Buscar opciones compatibles','Validar agua, acceso y documentos','Estimar costo total','Coordinar venta con hitos del destino']},
+      {title:'Diseñar el cambio completo',summary:'Modelar venta, parcela, vivienda y reserva como una sola transición.',optimizes:'Coherencia del plan total',tradeoff:'Requiere más evidencia antes de ejecutar',needs:'Presupuesto integral + proveedores',actions:['Construir presupuesto maestro','Definir escenario base y contingencia','Comparar rutas completas','Validar especialistas críticos','Cerrar secuencia de ejecución']}
+    ]
+  },
+  mining:{
+    name:'Minería y exploración',
+    framing:['Qué hipótesis geológica o económica se quiere resolver','Qué decisión habilitaría la nueva evidencia','Qué evidencia ya existe y con qué calidad','Qué incertidumbres dominan el valor del siguiente paso','Qué costo y reversibilidad tiene cada acción'],
+    evidence:[
+      ['goal','Hipótesis y decisión objetivo','Declaración del equipo','verified',true,'Una campaña solo tiene sentido si responde una pregunta que cambia una decisión.'],
+      ['tenure','Derechos, alcance y restricciones','Documentación legal / concesión','pending',true,'La opción técnica debe ser compatible con el estado jurídico del proyecto.'],
+      ['geo','Modelo geológico actual','Mapeo, logs, interpretación y modelos','pending',true,'Hay que distinguir observación, interpretación e hipótesis.'],
+      ['assays','Datos geoquímicos y QA/QC','Laboratorio + cadena de custodia','pending',true,'La evidencia analítica necesita procedencia y controles antes de sostener un claim.'],
+      ['geo2','Geofísica / teledetección / estructura','Datos procesados + método + versión','unknown',false,'Puede reducir incertidumbre, pero no sustituye evidencia directa cuando esta es necesaria.'],
+      ['economics','Costo del siguiente aprendizaje','Presupuesto + logística + plazo','unknown',true,'La mejor siguiente acción debe comparar información ganada versus costo y blast radius.']
+    ],
+    scenarios:[
+      {title:'Validar hipótesis crítica',summary:'Diseñar el siguiente trabajo solo para resolver la incertidumbre dominante.',optimizes:'Valor de información',tradeoff:'No cubre todas las preguntas a la vez',needs:'Hipótesis explícita + criterio de falsación',actions:['Definir claim a probar','Mapear evidencia existente','Diseñar prueba mínima','Fijar gate PASS/REVIEW/BLOCK','Ejecutar y actualizar modelo']},
+      {title:'Campaña escalonada',summary:'Aumentar compromiso solo cuando los gates anteriores entregan evidencia suficiente.',optimizes:'Control de capital',tradeoff:'Avance más gradual',needs:'Hitos y presupuesto por etapa',actions:['Ordenar campañas por dependencia','Definir evidencia mínima por etapa','Presupuestar cada gate','Ejecutar primera etapa','Revisar decisión antes de escalar']},
+      {title:'Integración de evidencia',summary:'Reconciliar datos de terreno, laboratorio y modelos antes de nueva campaña.',optimizes:'Coherencia del modelo',tradeoff:'Retrasa trabajo nuevo',needs:'Acceso a datos y trazabilidad',actions:['Inventariar fuentes','Resolver contradicciones','Versionar modelo actual','Identificar huecos','Priorizar adquisición faltante']}
+    ]
+  },
+  business:{
+    name:'Negocio e inversión',
+    framing:['Qué resultado económico se busca','Qué tendría que ser cierto para que funcione','Qué restricción de capital o tiempo es crítica','Qué señal demostraría demanda real','Qué pérdida máxima es aceptable'],
+    evidence:[
+      ['goal','Resultado y límites de la decisión','Declaración del decisor','verified',true,'Una oportunidad se evalúa contra un objetivo y restricciones explícitas.'],
+      ['demand','Demanda real','Ventas, contratos, experimentos o comportamiento observable','pending',true,'Interés declarado no equivale a disposición real a pagar.'],
+      ['unit','Economía unitaria','Costos, precio, margen y adquisición','pending',true,'El crecimiento amplifica un modelo bueno o un problema.'],
+      ['capacity','Capacidad operativa','Procesos, proveedores, personas y tiempos','unknown',false,'La promesa comercial debe poder ejecutarse.'],
+      ['cash','Caja y downside','Flujo de caja + escenarios','pending',true,'La decisión cambia cuando se hace visible cuánto capital puede perderse y por cuánto tiempo.'],
+      ['market','Mercado y alternativas','Fuentes externas + comparables','unknown',false,'El contexto sirve para contrastar la hipótesis, no para reemplazar evidencia propia.']
+    ],
+    scenarios:[
+      {title:'Piloto pequeño',summary:'Comprar evidencia con el menor compromiso irreversible posible.',optimizes:'Aprendizaje rápido',tradeoff:'Resultados iniciales más limitados',needs:'Métrica y umbral de éxito',actions:['Definir hipótesis comercial','Diseñar oferta mínima','Fijar pérdida máxima','Ejecutar piloto','Comparar resultado con umbral']},
+      {title:'Validar antes de invertir',summary:'Cerrar vacíos de demanda, costos y operación antes de desplegar capital.',optimizes:'Reducción de incertidumbre',tradeoff:'Menor velocidad inicial',needs:'Datos primarios',actions:['Entrevistar/comprobar demanda','Cerrar costos reales','Modelar caja','Testear canal de adquisición','Tomar decisión de inversión']},
+      {title:'Ejecución condicionada',summary:'Preparar despliegue completo pero liberar recursos solo por gates.',optimizes:'Velocidad con control',tradeoff:'Mayor coordinación',needs:'Gates claros y responsables',actions:['Definir hitos','Asignar responsables','Preparar capacidad','Liberar primer tramo','Reevaluar en cada gate']}
+    ]
+  },
+  general:{
+    name:'Decisión general',
+    framing:['Qué quieres conseguir exactamente','Qué no estás dispuesto a perder','Qué tendría que ser cierto para que funcione','Qué información cambiaría tu decisión','Qué parte puedes probar antes de comprometerte'],
+    evidence:[
+      ['goal','Objetivo explícito','Declaración de la persona','verified',true,'El sistema no puede optimizar una decisión si no sabe qué resultado importa.'],
+      ['baseline','Situación actual','Datos o documentos de base','pending',true,'Hay que saber desde dónde se parte para comparar el cambio.'],
+      ['constraints','Restricciones reales','Tiempo, dinero, reglas y dependencias','pending',true,'Las opciones deben ser viables bajo las restricciones reales.'],
+      ['external','Evidencia externa','Fuentes primarias o verificables','unknown',false,'La información externa debe distinguirse de opinión o inferencia.'],
+      ['cost','Costo y downside','Presupuesto + escenarios','unknown',true,'Una acción cambia de calidad cuando se entiende su costo, reversibilidad y peor caso.'],
+      ['test','Prueba o señal de validación','Experimento / validación profesional','unknown',true,'Antes de una acción irreversible conviene buscar una señal que realmente cambie la decisión.']
+    ],
+    scenarios:[
+      {title:'Probar primero',summary:'Diseñar una prueba pequeña que resuelva la incertidumbre principal.',optimizes:'Aprendizaje',tradeoff:'No entrega ejecución total inmediata',needs:'Una hipótesis falsable',actions:['Definir resultado','Identificar incertidumbre dominante','Diseñar prueba mínima','Fijar criterio de decisión','Ejecutar y revisar']},
+      {title:'Reducir incertidumbre',summary:'Buscar la evidencia crítica antes de comprometer recursos.',optimizes:'Calidad de decisión',tradeoff:'Más tiempo antes de actuar',needs:'Fuentes y responsables',actions:['Listar claims críticos','Asignar fuentes','Buscar evidencia','Resolver contradicciones','Abrir gate humano']},
+      {title:'Avanzar por etapas',summary:'Ejecutar de forma reversible con checkpoints humanos.',optimizes:'Velocidad controlada',tradeoff:'Más disciplina operacional',needs:'Hitos y límites',actions:['Dividir en etapas','Definir límites','Asignar owners','Ejecutar etapa 1','Reevaluar antes de escalar']}
+    ]
+  }
+};
+
+function detectDomain(t){
+  const s=t.toLowerCase();
+  if(/parcela|casa|departamento|vivienda|campo|terreno|propiedad|construir|corret/.test(s)) return 'realestate';
+  if(/mina|minero|minera|cobre|geolog|explora|perfor|sondaj|conces/.test(s)) return 'mining';
+  if(/negocio|empresa|operaci[oó]n|invertir|inversi[oó]n|cliente|venta|mercado|producto/.test(s)) return 'business';
+  return 'general';
+}
+function buildData(idea){
+  const domain=detectDomain(idea), cfg=domainConfig[domain];
+  return {
+    id:'DR-'+Math.random().toString(36).slice(2,8).toUpperCase(),
+    idea,domain,domainName:cfg.name,
+    framing:cfg.framing,
+    evidence:cfg.evidence.map(x=>({id:x[0],name:x[1],source:x[2],status:x[3],critical:x[4],why:x[5]})),
+    scenarios:cfg.scenarios.map((x,i)=>({...x,id:'r'+(i+1)})),
+    invalidators:[
+      'Aparece evidencia primaria que contradice un supuesto crítico.',
+      'El costo, plazo o downside supera el límite que la persona considera aceptable.',
+      'Una validación profesional u oficial impide ejecutar la ruta como fue planteada.'
+    ]
+  }
+}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function counts(){
+  const e=state.data.evidence;return {
+    verified:e.filter(x=>x.status==='verified').length,
+    pending:e.filter(x=>x.status==='pending').length,
+    unknown:e.filter(x=>x.status==='unknown').length
+  }
+}
+function gate(){
+  const crit=state.data.evidence.filter(x=>x.critical&&x.status!=='verified').length;
+  return crit===0?{label:'Ready for human decision',cls:'ready'}:{label:crit+' critical checks open',cls:'review'}
+}
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
+function setIdea(t){$('#idea').value=t}
+function openRoom(idea){
+  idea=idea.trim(); if(!idea){toast('Escribe una idea primero');return}
+  state.data=buildData(idea);state.stage='intent';state.selected=null;
+  $('#intake').classList.add('hide');$('#room').classList.remove('hide');
+  const u=new URL(location.href);u.searchParams.set('idea',idea);history.replaceState({},'',u);
+  render();
+  window.scrollTo(0,0);
+}
+function render(){
+  const d=state.data,c=counts(),g=gate();
+  $('#roomTitle').textContent=d.idea;
+  $('#decisionId').textContent=d.id;
+  $('#domainPill').textContent=d.domainName;
+  $('#gatePill').textContent=g.label;$('#gatePill').className='gate '+g.cls;
+  $$('.stage-btn').forEach(b=>b.classList.toggle('active',b.dataset.stage===state.stage));
+  $('#verifiedCount').textContent=c.verified;$('#pendingCount').textContent=c.pending;$('#unknownCount').textContent=c.unknown;
+  $('#trace').innerHTML=d.evidence.slice(0,4).map(e=>'<div class="trace-row"><b>'+esc(e.name)+'</b><span>'+esc(e.source)+'</span></div>').join('');
+  renderStage();
+}
+function renderStage(){
+  const d=state.data,w=$('#workspace');
+  if(state.stage==='intent'){
+    w.innerHTML='<div class="section-top"><div><div class="eyebrow">01 · Intención</div><h2>Primero: no perder lo que quieres.</h2><p>La tecnología entra después. El punto de partida es conservar la intención original y hacer visibles las condiciones que pueden cambiarla.</p></div></div>'+
+    '<div class="panel"><div class="panel-title"><b>Tu idea, sin reinterpretarla todavía</b><span>entrada original</span></div><p class="big-quote">“'+esc(d.idea)+'”</p></div>'+
+    '<div class="mini-grid"><div class="mini"><b>Regla 1</b><span>El sistema no reemplaza tu decisión. Estructura lo que necesitas saber para tomarla.</span></div><div class="mini"><b>Regla 2</b><span>Una inferencia no se presenta como hecho. Una incertidumbre no se esconde.</span></div></div>'+
+    '<div style="margin-top:14px"><button class="primary" onclick="go(\'frame\')">Convertir la idea en preguntas →</button></div>';
+  }
+  if(state.stage==='frame'){
+    w.innerHTML='<div class="section-top"><div><div class="eyebrow">02 · Encuadre</div><h2>¿Qué tendría que ser cierto?</h2><p>Una idea empieza a convertirse en decisión cuando podemos nombrar las preguntas que realmente cambian el resultado.</p></div></div>'+
+    '<div class="list">'+d.framing.map((q,i)=>'<div class="item"><div class="item-index">'+(i+1)+'</div><div><b>'+esc(q)+'</b><p>Esta pregunta debe responderse con evidencia, una validación o una condición explícita.</p></div><span class="status pending">abierta</span></div>').join('')+'</div>'+
+    '<div style="margin-top:14px"><button class="primary" onclick="go(\'evidence\')">Ver qué evidencia falta →</button></div>';
+  }
+  if(state.stage==='evidence'){
+    w.innerHTML='<div class="section-top"><div><div class="eyebrow">03 · Evidencia</div><h2>Qué sabemos. De dónde sale. Qué falta.</h2><p>La complejidad puede quedarse detrás; la procedencia no. Cada pieza importante conserva su estado y su fuente esperada.</p></div><span class="tiny">Pulsa “ver por qué”</span></div>'+
+    '<div class="evidence">'+d.evidence.map(e=>'<div class="e-card" id="e-'+e.id+'"><div class="e-main"><div><div class="e-name">'+esc(e.name)+(e.critical?' · crítico':'')+'</div><div class="e-source">'+esc(e.source)+'</div></div><div class="e-actions"><span class="status '+e.status+'">'+e.status+'</span><button class="small-btn" onclick="toggleWhy(\''+e.id+'\')">ver por qué</button>'+(e.status!=='verified'?'<button class="small-btn verify" onclick="verify(\''+e.id+'\')">marcar verificado</button>':'')+'</div></div><div class="e-why">'+esc(e.why)+'</div></div>').join('')+'</div>'+
+    '<div style="margin-top:14px"><button class="primary" onclick="go(\'scenarios\')">Construir rutas posibles →</button></div>';
+  }
+  if(state.stage==='scenarios'){
+    w.innerHTML='<div class="section-top"><div><div class="eyebrow">04 · Rutas</div><h2>No una respuesta. Varias rutas comparables.</h2><p>El sistema no fabrica un ganador mágico. Expone qué optimiza cada ruta, qué sacrifica y qué necesita para sostenerse.</p></div></div>'+
+    '<div class="scenarios">'+d.scenarios.map((s,i)=>'<button class="scenario '+(state.selected===s.id?'selected':'')+'" onclick="selectScenario(\''+s.id+'\')"><div class="route">Ruta '+String.fromCharCode(65+i)+'</div><h3>'+esc(s.title)+'</h3><p>'+esc(s.summary)+'</p><dl><div><dt>Optimiza</dt><dd>'+esc(s.optimizes)+'</dd></div><div><dt>Trade-off</dt><dd>'+esc(s.tradeoff)+'</dd></div><div><dt>Necesita</dt><dd>'+esc(s.needs)+'</dd></div></dl></button>').join('')+'</div>'+
+    '<div style="margin-top:14px"><button class="primary" onclick="go(\'decision\')">Abrir checkpoint humano →</button></div>';
+  }
+  if(state.stage==='decision'){
+    const s=d.scenarios.find(x=>x.id===state.selected),g=gate();
+    w.innerHTML='<div class="section-top"><div><div class="eyebrow">05 · Decisión humana</div><h2>'+ (s?'Has elegido una ruta para evaluar.':'La decisión sigue abierta.') +'</h2><p>El sistema muestra lo que sostiene o debilita una opción. La decisión final sigue siendo tuya.</p></div></div>'+
+    '<div class="decision-band"><div class="k">Gate actual · '+esc(g.label)+'</div><h3>'+(s?esc(s.title):'Selecciona una ruta antes de ejecutar')+'</h3><p>'+(s?esc(s.summary):'Vuelve a Rutas y elige la alternativa que quieres llevar al checkpoint.')+'</p></div>'+
+    '<div class="panel"><div class="panel-title"><b>¿Qué podría cambiar esta decisión?</b><span>condiciones de invalidación</span></div><div class="list">'+d.invalidators.map((x,i)=>'<div class="item"><div class="item-index">!</div><div><b>'+esc(x)+'</b><p>Si ocurre, la ruta debe reabrirse en vez de seguir por inercia.</p></div></div>').join('')+'</div></div>'+
+    '<button class="primary" onclick="go(\'action\')">Convertir la ruta en acciones →</button>';
+  }
+  if(state.stage==='action'){
+    const s=d.scenarios.find(x=>x.id===state.selected)||d.scenarios[0];
+    w.innerHTML='<div class="section-top"><div><div class="eyebrow">06 · Acción</div><h2>La decisión se vuelve ejecutable.</h2><p>Una acción tiene orden, responsable y una condición que debe estar satisfecha. Marcar actividad no equivale a demostrar avance.</p></div><button class="ghost" onclick="copyPack()">Copiar Decision Pack</button></div>'+
+    '<div class="panel"><div class="panel-title"><b>'+esc(s.title)+'</b><span>secuencia inicial</span></div><div class="list">'+s.actions.map((a,i)=>'<div class="action"><button class="check" onclick="this.classList.toggle(\'done\');this.textContent=this.classList.contains(\'done\')?\'✓\':\'\'"></button><div><b>'+esc(a)+'</b><span>'+(i===0?'Siguiente movimiento':'Depende de evidencia o del hito anterior')+'</span></div><span class="owner">'+(i<2?'humano + sistema':'owner asignable')+'</span></div>').join('')+'</div>'+
+    '<div class="mini-grid"><div class="mini"><b>Salida</b><span>Una ruta comprensible, sus supuestos, evidencia abierta, incertidumbre y siguientes acciones.</span></div><div class="mini"><b>Memoria</b><span>El resultado de cada acción puede volver al sistema y cambiar la decisión siguiente.</span></div></div>';
+  }
+}
+window.go=s=>{state.stage=s;render();window.scrollTo({top:0,behavior:'smooth'})};
+window.toggleWhy=id=>$('#e-'+id).classList.toggle('open');
+window.verify=id=>{const e=state.data.evidence.find(x=>x.id===id);e.status='verified';render()};
+window.selectScenario=id=>{state.selected=id;render()};
+function copyPack(){
+  const d=state.data,s=d.scenarios.find(x=>x.id===state.selected)||d.scenarios[0],g=gate();
+  const txt='DECISION PACK '+d.id+'\n\nINTENCIÓN\n'+d.idea+'\n\nDOMINIO\n'+d.domainName+'\n\nGATE\n'+g.label+'\n\nRUTA\n'+s.title+'\n'+s.summary+'\n\nACCIONES\n- '+s.actions.join('\n- ')+'\n\nEVIDENCIA\n'+d.evidence.map(e=>'- ['+e.status+'] '+e.name+' — '+e.source).join('\n');
+  navigator.clipboard.writeText(txt).then(()=>toast('Decision Pack copiado'));
+}
+async function share(){
+  const u=new URL(location.href);u.searchParams.set('idea',state.data.idea);
+  try{await navigator.clipboard.writeText(u.toString());toast('Enlace copiado')}catch{prompt('Copia este enlace',u.toString())}
+}
+$('#start').addEventListener('click',()=>openRoom($('#idea').value));
+$('#idea').addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter')openRoom($('#idea').value)});
+$$('.sample').forEach((b,i)=>b.addEventListener('click',()=>setIdea(samples[i])));
+$$('.stage-btn').forEach(b=>b.addEventListener('click',()=>go(b.dataset.stage)));
+$('#shareBtn').addEventListener('click',share);
+$('#resetBtn').addEventListener('click',()=>{const u=new URL(location.href);u.search='';history.replaceState({},'',u);$('#room').classList.add('hide');$('#intake').classList.remove('hide');$('#idea').value='';window.scrollTo(0,0)});
+$('#archBtn').addEventListener('click',()=>$('#drawer').classList.add('open'));
+$('#archBtn2').addEventListener('click',()=>$('#drawer').classList.add('open'));
+$('#closeDrawer').addEventListener('click',()=>$('#drawer').classList.remove('open'));
+$('#drawer').addEventListener('click',e=>{if(e.target.id==='drawer')$('#drawer').classList.remove('open')});
+const initial=new URL(location.href).searchParams.get('idea');if(initial){$('#idea').value=initial;openRoom(initial)}
+</script>
+</body>
+</html>
