@@ -1,0 +1,13 @@
+{
+  "product": "Deep Living OS",
+  "artifact": "standalone_public_demo",
+  "source_repo": "deepanalytica/deep-analytica-platform",
+  "source_commit": "1ca1686be562b3485d35271b2c3c9f6977de009d",
+  "deployed_from": "Deep_Living_OS_v2_Demo_Standalone.html",
+  "git_pages_commit": "c6f729be43d3f0420c0fe3405120e01f421c0bb7",
+  "backend": "none, in-memory demo",
+  "territorial_data": "none, not validated",
+  "payments": "disabled",
+  "readiness": "public demonstration only, not transactional production",
+  "privacy": "no real records entered for testing; noindex, do not submit sensitive data"
+}
