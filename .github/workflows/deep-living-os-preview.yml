@@ -1,0 +1,70 @@
+name: Deep Living OS — isolated preview (preserve existing sites)
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/deep-living-os-preview.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: deep-living-os-preview
+  cancel-in-progress: false
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout existing gh-pages site (never reset root)
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: site
+          persist-credentials: true
+      - name: Checkout isolated Deep Living source pinned to tested SHA
+        uses: actions/checkout@v4
+        with:
+          repository: deepanalytica/deep-analytica-platform
+          ref: 1ca1686be562b3485d35271b2c3c9f6977de009d
+          path: platform
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Test and build isolated app with demo backend only
+        working-directory: platform/products/deep-living-os
+        run: |
+          npm install --no-audit --no-fund
+          npm run check
+        env:
+          VITE_SUPABASE_URL: ""
+          VITE_SUPABASE_ANON_KEY: ""
+      - name: Publish only deep-living/os (do not touch existing public landing)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f site/deep-living/index.html || { echo "Existing Deep Living landing not found; aborting"; exit 1; }
+          test -f platform/products/deep-living-os/dist/index.html
+          mkdir -p site/deep-living/os
+          find site/deep-living/os -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+          cp -a platform/products/deep-living-os/dist/. site/deep-living/os/
+          python - <<'PY'
+          from pathlib import Path
+          p=Path("site/deep-living/os/index.html")
+          s=p.read_text(encoding="utf-8")
+          s=s.replace("<head>","<head><meta name=\"robots\" content=\"noindex,nofollow\">",1)
+          p.write_text(s,encoding="utf-8")
+          PY
+          cat > site/deep-living/os/release.json <<'JSON'
+          {"project":"Deep Living OS","release_type":"public_demo","source_sha":"1ca1686be562b3485d35271b2c3c9f6977de009d","backend":"demo_memory_only","geodata":"not_connected","warning":"No real transactions, no territorial validation, no paid product"}
+          JSON
+          cd site
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- deep-living/os
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "deploy(deep-living): isolated validated OS public demonstration"
+          git push origin HEAD:gh-pages
+      - name: Deployment summary
+        run: |
+          echo "Preview path: https://deepanalytica.github.io/web2022/deep-living/os/?app=1" >> "$GITHUB_STEP_SUMMARY"
+          echo "This is a public demo without Supabase, persistence, or live geodata." >> "$GITHUB_STEP_SUMMARY"
